@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils";
 import bubboImage from "@/assets/bubbo.png";
 
 const navLinks = [
-  { href: "/", label: "首頁" },
-  { href: "/features", label: "功能介紹" },
-  { href: "/about", label: "關於我們" },
-  { href: "/contact", label: "聯絡我們" },
+  { href: "/", label: "Home" },
+  { href: "/features", label: "Features" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -31,7 +31,7 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled 
           ? "py-3 glass border-b border-white/10" 
           : "py-5 bg-transparent"
@@ -46,7 +46,7 @@ export const Navbar = () => {
           <img 
             src={bubboImage} 
             alt="Bubly" 
-            className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" 
+            className="w-10 h-10 object-contain transition-all duration-500 group-hover:scale-105" 
           />
           <span className="text-2xl font-bold gradient-text">Bubly</span>
         </Link>
@@ -58,7 +58,7 @@ export const Navbar = () => {
               key={link.href}
               to={link.href}
               className={cn(
-                "text-sm font-medium transition-colors link-underline py-1",
+                "text-sm font-medium transition-colors duration-300 link-underline py-1",
                 location.pathname === link.href
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
@@ -72,16 +72,16 @@ export const Navbar = () => {
             href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-full bg-gradient-bubly text-white font-medium text-sm hover:opacity-90 transition-all hover:scale-105 shadow-lg"
+            className="px-5 py-2 rounded-full bg-gradient-bubly text-white font-medium text-sm transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-lg"
           >
-            下載 APP
+            Download
           </a>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+          className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-300"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -91,7 +91,7 @@ export const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "md:hidden absolute top-full left-0 right-0 glass border-b border-white/10 transition-all duration-300 overflow-hidden",
+          "md:hidden absolute top-full left-0 right-0 glass border-b border-white/10 transition-all duration-500 overflow-hidden",
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
@@ -101,7 +101,7 @@ export const Navbar = () => {
               key={link.href}
               to={link.href}
               className={cn(
-                "text-base font-medium py-2 transition-colors",
+                "text-base font-medium py-2 transition-colors duration-300",
                 location.pathname === link.href
                   ? "text-foreground"
                   : "text-muted-foreground hover:text-foreground"
@@ -114,9 +114,9 @@ export const Navbar = () => {
             href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-3 rounded-full bg-gradient-bubly text-white font-medium text-center hover:opacity-90 transition-all"
+            className="px-5 py-3 rounded-full bg-gradient-bubly text-white font-medium text-center transition-all duration-300 hover:opacity-90"
           >
-            下載 APP
+            Download
           </a>
         </div>
       </div>

@@ -142,35 +142,32 @@
     filter: blur(1px);
   }
 
-  /* Floating animation for Bubbo */
-  .float {
-    animation: float 3s ease-in-out infinite;
+  /* Gentle floating animation for Bubbo - subtle and elegant */
+  .float-gentle {
+    animation: floatGentle 6s ease-in-out infinite;
   }
 
-  .float-slow {
-    animation: float 4s ease-in-out infinite;
+  /* Soft breathing effect */
+  .breathe {
+    animation: breathe 4s ease-in-out infinite;
   }
 
-  .float-delayed {
-    animation: float 3s ease-in-out infinite 0.5s;
+  /* Pulse glow effect - subtle */
+  .pulse-glow-soft {
+    animation: pulseGlowSoft 4s ease-in-out infinite;
   }
 
-  /* Pulse glow effect */
-  .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-
-  /* Wobble on hover */
-  .hover-wobble:hover {
-    animation: wobble 0.5s ease-in-out;
+  /* Gentle tilt on hover */
+  .hover-tilt:hover {
+    transform: rotate(2deg) translateY(-2px);
   }
 
   /* Scale on hover */
   .hover-scale {
-    @apply transition-transform duration-300;
+    @apply transition-all duration-500 ease-out;
   }
   .hover-scale:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   /* Link underline animation */
@@ -192,42 +189,48 @@
   .mesh-gradient {
     background-color: hsl(var(--background));
     background-image: 
-      radial-gradient(at 40% 20%, hsl(var(--bubly-sky) / 0.25) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, hsl(var(--bubly-violet) / 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsl(var(--bubly-pink) / 0.15) 0px, transparent 50%),
-      radial-gradient(at 80% 50%, hsl(var(--bubly-blue) / 0.2) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, hsl(var(--bubly-violet) / 0.15) 0px, transparent 50%);
+      radial-gradient(at 40% 20%, hsl(var(--bubly-sky) / 0.2) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--bubly-violet) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--bubly-pink) / 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(var(--bubly-blue) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(var(--bubly-violet) / 0.1) 0px, transparent 50%);
   }
 }
 
-@keyframes float {
+/* Gentle float - very subtle up/down movement */
+@keyframes floatGentle {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-6px);
   }
 }
 
-@keyframes pulseGlow {
+/* Soft breathing scale */
+@keyframes breathe {
   0%, 100% {
-    filter: drop-shadow(0 0 20px hsl(var(--bubly-violet) / 0.4));
+    transform: scale(1);
   }
   50% {
-    filter: drop-shadow(0 0 35px hsl(var(--bubly-violet) / 0.6));
+    transform: scale(1.02);
   }
 }
 
-@keyframes wobble {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-5deg); }
-  75% { transform: rotate(5deg); }
+/* Subtle glow pulse */
+@keyframes pulseGlowSoft {
+  0%, 100% {
+    filter: drop-shadow(0 8px 24px hsl(262 83% 70% / 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 12px 32px hsl(262 83% 70% / 0.35));
+  }
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -243,7 +246,7 @@
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
@@ -251,13 +254,14 @@
   }
 }
 
+/* Very gentle bubble float for background */
 @keyframes bubbleFloat {
   0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
+    transform: translateY(0);
+    opacity: 0.4;
   }
   50% {
-    transform: translateY(-20px) scale(1.1);
-    opacity: 0.8;
+    transform: translateY(-15px);
+    opacity: 0.6;
   }
 }
