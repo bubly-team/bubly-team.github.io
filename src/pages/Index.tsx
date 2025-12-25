@@ -1,9 +1,16 @@
 import { Layout } from "@/components/Layout";
 import { Bubbo } from "@/components/Bubbo";
 import { GlassCard } from "@/components/GlassCard";
-import { PhoneMockup, ContactsScreen, GreetingScreen, RemindersScreen } from "@/components/PhoneMockup";
+import { PhoneMockup } from "@/components/PhoneMockup";
 import { Users, Sparkles, Bell, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// App screenshots
+import screenshot1 from "@/assets/app-screenshot-1.png";
+import screenshot3 from "@/assets/app-screenshot-3.png";
+import screenshot4 from "@/assets/app-screenshot-4.png";
+import screenshot5 from "@/assets/app-screenshot-5.png";
+import screenshot6 from "@/assets/app-screenshot-6.png";
 
 const features = [
   {
@@ -100,26 +107,57 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4">
             {/* Left phone - slightly behind */}
             <div className="lg:-mr-8 lg:opacity-80 lg:scale-90 transition-all duration-500 hover:opacity-100 hover:scale-95">
-              <PhoneMockup>
-                <ContactsScreen />
-              </PhoneMockup>
-              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">Contact Management</p>
+              <PhoneMockup image={screenshot6} />
+              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">Event Calendar</p>
             </div>
 
             {/* Center phone - main focus */}
             <div className="relative z-10 lg:scale-100">
-              <PhoneMockup>
-                <GreetingScreen />
-              </PhoneMockup>
-              <p className="text-center mt-6 text-sm font-medium gradient-text">AI Greetings</p>
+              <PhoneMockup image={screenshot3} />
+              <p className="text-center mt-6 text-sm font-medium gradient-text">Smart Dashboard</p>
             </div>
 
             {/* Right phone - slightly behind */}
             <div className="lg:-ml-8 lg:opacity-80 lg:scale-90 transition-all duration-500 hover:opacity-100 hover:scale-95">
-              <PhoneMockup>
-                <RemindersScreen />
-              </PhoneMockup>
-              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">Smart Reminders</p>
+              <PhoneMockup image={screenshot4} />
+              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">AI Greetings</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Showcase Section */}
+      <section className="py-20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          {/* Feature 1: Contact Management */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+            <div className="flex-1 text-center lg:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Know Your <span className="gradient-text">Bubbles</span> Better
+              </h3>
+              <p className="text-muted-foreground max-w-lg">
+                Keep track of hobbies, interests, and important milestones in one place. 
+                Add personal notes and never forget what matters to your friends.
+              </p>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <PhoneMockup image={screenshot5} />
+            </div>
+          </div>
+
+          {/* Feature 2: Home Dashboard */}
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            <div className="flex-1 text-center lg:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Because Relationships <span className="gradient-text">Deserve</span> to Be Remembered
+              </h3>
+              <p className="text-muted-foreground max-w-lg">
+                Your universe of friends at a glance. Track birthdays, anniversaries, 
+                and special moments with an intelligent calendar that keeps you connected.
+              </p>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <PhoneMockup image={screenshot1} />
             </div>
           </div>
         </div>
