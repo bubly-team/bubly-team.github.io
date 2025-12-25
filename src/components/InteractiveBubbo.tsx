@@ -317,14 +317,14 @@ export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorB
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
       
-      {/* Inner glow - soft pulse */}
+      {/* Inner glow - soft pulse with occasional bright flash */}
       <motion.div 
         className="absolute inset-0 -m-10 bg-gradient-radial from-bubly-pink/20 via-bubly-violet/10 to-transparent blur-3xl rounded-full"
         animate={{
-          opacity: [0.5, 0.7, 0.5],
-          scale: [1, 1.12, 1],
+          opacity: [0.5, 0.7, 0.5, 0.5, 0.9, 0.5],
+          scale: [1, 1.12, 1, 1, 1.15, 1],
         }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", times: [0, 0.3, 0.5, 0.7, 0.85, 1] }}
       />
 
       {/* Subtle shimmer highlight */}
@@ -337,16 +337,18 @@ export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorB
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       
-      {/* 3D container - gentle automatic rotation */}
+      {/* 3D container - gentle sway + occasional tilt */}
       <motion.div
         className="relative"
         animate={{
           rotateY: [-4, 4, -4],
           rotateX: [2, -2, 2],
+          rotateZ: [-2, 2, -2, 0, 3, -3, 0, -2],
         }}
         transition={{ 
           rotateY: { duration: 8, repeat: Infinity, ease: "easeInOut" },
           rotateX: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+          rotateZ: { duration: 10, repeat: Infinity, ease: "easeInOut" },
         }}
         style={{ transformStyle: "preserve-3d" }}
       >
@@ -355,15 +357,16 @@ export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorB
           className="absolute inset-0 top-6"
           animate={{
             x: [-3, 3, -3],
-            y: [12, 16, 12],
+            y: [12, 8, 16, 12],
             opacity: [0.15, 0.2, 0.15],
+            scale: [1, 0.95, 1.05, 1],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
           <div className={`${sizeClasses[size]} bg-bubly-violet/25 rounded-full blur-2xl`} />
         </motion.div>
 
-        {/* Main Bubbo - elegant floating animation */}
+        {/* Main Bubbo - cute bounce + sway + squish */}
         <motion.img
           src={bubboDefault}
           alt="Bubbo"
@@ -372,16 +375,61 @@ export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorB
             filter: "drop-shadow(0 30px 60px rgba(167,139,250,0.4))",
           }}
           animate={{ 
-            y: [0, -12, 0],
-            rotate: [-1.5, 1.5, -1.5],
-            scale: [1, 1.02, 1],
+            y: [0, -8, 0, -3, -18, -3, 0, -8, 0],
+            rotate: [-1.5, 1.5, -1.5, 2, -2, 1.5, -1.5],
+            scale: [1, 1.02, 1, 1.01, 0.97, 1.04, 1],
+            scaleX: [1, 1, 1, 1, 1.03, 0.97, 1],
+            scaleY: [1, 1, 1, 1, 0.95, 1.05, 1],
           }}
           transition={{ 
-            y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+            y: { duration: 6, repeat: Infinity, ease: "easeInOut", times: [0, 0.15, 0.3, 0.45, 0.55, 0.65, 0.75, 0.9, 1] },
             rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" },
-            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+            scaleX: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+            scaleY: { duration: 6, repeat: Infinity, ease: "easeInOut" },
           }}
         />
+      </motion.div>
+
+      {/* Floating heart - appears periodically */}
+      <motion.div
+        className="absolute -top-4 right-0 text-lg pointer-events-none"
+        animate={{
+          y: [0, -25, -40],
+          x: [0, 8, 12],
+          opacity: [0, 0.8, 0],
+          scale: [0.5, 1, 0.8],
+        }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeOut", repeatDelay: 4 }}
+      >
+        💕
+      </motion.div>
+
+      {/* Floating star - appears with offset */}
+      <motion.div
+        className="absolute -top-2 left-0 text-sm pointer-events-none"
+        animate={{
+          y: [0, -30, -45],
+          x: [0, -10, -15],
+          opacity: [0, 0.9, 0],
+          scale: [0.4, 1.1, 0.7],
+          rotate: [0, 180, 360],
+        }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", repeatDelay: 5, delay: 2 }}
+      >
+        ✨
+      </motion.div>
+
+      {/* Little sparkle burst - occasional */}
+      <motion.div
+        className="absolute top-1/3 -right-3 text-xs pointer-events-none"
+        animate={{
+          opacity: [0, 1, 0],
+          scale: [0.3, 1.2, 0.5],
+        }}
+        transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 6, delay: 3 }}
+      >
+        ⭐
       </motion.div>
 
       {/* Sparkle particles - subtle and elegant */}
