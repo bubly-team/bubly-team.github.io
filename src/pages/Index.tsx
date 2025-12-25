@@ -1,7 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Bubbo } from "@/components/Bubbo";
 import { GlassCard } from "@/components/GlassCard";
-import { PhoneMockup } from "@/components/PhoneMockup";
 import { Users, Sparkles, Bell, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -103,24 +102,30 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Phone mockups */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4">
-            {/* Left phone - slightly behind */}
-            <div className="lg:-mr-8 lg:opacity-80 lg:scale-90 transition-all duration-500 hover:opacity-100 hover:scale-95">
-              <PhoneMockup image={screenshot6} />
-              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">Event Calendar</p>
+          {/* Screenshots grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {/* Left screenshot */}
+            <div className="transition-all duration-500 hover:scale-[1.02] group">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/20">
+                <img src={screenshot6} alt="Event Calendar" className="w-full h-auto" />
+              </div>
+              <p className="text-center mt-4 text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">Event Calendar</p>
             </div>
 
-            {/* Center phone - main focus */}
-            <div className="relative z-10 lg:scale-100">
-              <PhoneMockup image={screenshot3} />
-              <p className="text-center mt-6 text-sm font-medium gradient-text">Smart Dashboard</p>
+            {/* Center screenshot - main focus */}
+            <div className="transition-all duration-500 hover:scale-[1.02] group md:-mt-4 md:mb-4">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-primary/20 ring-2 ring-primary/10">
+                <img src={screenshot3} alt="Smart Dashboard" className="w-full h-auto" />
+              </div>
+              <p className="text-center mt-4 text-sm font-medium gradient-text">Smart Dashboard</p>
             </div>
 
-            {/* Right phone - slightly behind */}
-            <div className="lg:-ml-8 lg:opacity-80 lg:scale-90 transition-all duration-500 hover:opacity-100 hover:scale-95">
-              <PhoneMockup image={screenshot4} />
-              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">AI Greetings</p>
+            {/* Right screenshot */}
+            <div className="transition-all duration-500 hover:scale-[1.02] group">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/20">
+                <img src={screenshot4} alt="AI Greetings" className="w-full h-auto" />
+              </div>
+              <p className="text-center mt-4 text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">AI Greetings</p>
             </div>
           </div>
         </div>
@@ -141,7 +146,9 @@ const Index = () => {
               </p>
             </div>
             <div className="flex-1 flex justify-center">
-              <PhoneMockup image={screenshot5} />
+              <div className="max-w-xs rounded-3xl overflow-hidden shadow-2xl border border-border/20 transition-all duration-500 hover:scale-[1.02]">
+                <img src={screenshot5} alt="Contact Management" className="w-full h-auto" />
+              </div>
             </div>
           </div>
 
@@ -157,7 +164,9 @@ const Index = () => {
               </p>
             </div>
             <div className="flex-1 flex justify-center">
-              <PhoneMockup image={screenshot1} />
+              <div className="max-w-xs rounded-3xl overflow-hidden shadow-2xl border border-border/20 transition-all duration-500 hover:scale-[1.02]">
+                <img src={screenshot1} alt="Home Dashboard" className="w-full h-auto" />
+              </div>
             </div>
           </div>
         </div>
