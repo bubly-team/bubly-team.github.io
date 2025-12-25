@@ -12,6 +12,13 @@ import bubboArtist from "@/assets/bubbo-artist.png";
 import bubboBusiness from "@/assets/bubbo-business.png";
 import bubboProfessor from "@/assets/bubbo-professor.png";
 
+// Christmas Bubbos
+import bubboXmasSanta from "@/assets/bubbo-xmas-santa.png";
+import bubboXmasDeer from "@/assets/bubbo-xmas-deer.png";
+import bubboXmasGift from "@/assets/bubbo-xmas-gift.png";
+import bubboXmasTree from "@/assets/bubbo-xmas-tree.png";
+import bubboXmasSocks from "@/assets/bubbo-xmas-socks.png";
+
 const bubboVariants = [
   { id: "cool", image: bubboCool, label: "Cool", trait: "Always stylish" },
   { id: "music", image: bubboMusic, label: "Groovy", trait: "Rhythm lover" },
@@ -22,6 +29,12 @@ const bubboVariants = [
   { id: "artist", image: bubboArtist, label: "Creative", trait: "Imagination unlimited" },
   { id: "business", image: bubboBusiness, label: "Pro", trait: "Always reliable" },
   { id: "professor", image: bubboProfessor, label: "Wise", trait: "Knowledge keeper" },
+  // Christmas special
+  { id: "xmas-santa", image: bubboXmasSanta, label: "Santa", trait: "Holiday spirit", special: true },
+  { id: "xmas-deer", image: bubboXmasDeer, label: "Reindeer", trait: "Jingle bells", special: true },
+  { id: "xmas-gift", image: bubboXmasGift, label: "Gifter", trait: "Giving joy", special: true },
+  { id: "xmas-tree", image: bubboXmasTree, label: "Festive", trait: "Party ready", special: true },
+  { id: "xmas-socks", image: bubboXmasSocks, label: "Cozy", trait: "Warm wishes", special: true },
 ];
 
 export const BubboGallery = () => {
