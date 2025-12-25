@@ -77,12 +77,10 @@ const Index = () => {
             {/* Left - Text Content */}
             <div className="flex-1 text-center lg:text-left max-w-2xl lg:max-w-none">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bubly-violet/60 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-bubly-violet"></span>
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-gradient-to-r from-bubly-violet/10 via-bubly-pink/10 to-bubly-sky/10 backdrop-blur-md border border-bubly-violet/20 mb-8 animate-fade-in shadow-[0_0_20px_rgba(167,139,250,0.15)]">
+                <span className="text-sm font-medium bg-gradient-to-r from-bubly-violet via-bubly-pink to-bubly-sky bg-clip-text text-transparent">
+                  ✨ Your AI Social Companion
                 </span>
-                <span className="text-sm text-muted-foreground">Your AI Social Companion</span>
               </div>
               
               {/* Headline */}
