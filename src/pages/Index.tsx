@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Bubbo } from "@/components/Bubbo";
+import { BubboGallery, FloatingBubbos } from "@/components/BubboGallery";
 import { GlassCard } from "@/components/GlassCard";
 import { Users, Sparkles, Bell, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -34,6 +35,8 @@ const Index = () => {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Floating decorative Bubbos */}
+        <FloatingBubbos />
         <div className="container mx-auto px-4 py-20">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Text Content */}
@@ -197,6 +200,11 @@ const Index = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Bubbo Gallery Section */}
+      <section className="py-24 overflow-hidden relative">
+        <BubboGallery />
       </section>
 
       {/* Features Preview Section */}
