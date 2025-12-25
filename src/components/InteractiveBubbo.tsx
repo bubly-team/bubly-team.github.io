@@ -295,7 +295,7 @@ export const ScrollBubbo = ({ className = "", size = "md" }: ScrollBubboProps) =
   );
 };
 
-// Bubbo that follows cursor slightly
+// Bubbo that follows cursor with premium animations
 interface FollowCursorBubboProps {
   className?: string;
   size?: "sm" | "md" | "lg" | "xl";
@@ -303,12 +303,25 @@ interface FollowCursorBubboProps {
 
 export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorBubboProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mouseDistance, setMouseDistance] = useState(1); // 0 = close, 1 = far
+  const [isNear, setIsNear] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX - window.innerWidth / 2) / 50;
       const y = (e.clientY - window.innerHeight / 2) / 50;
       setMousePosition({ x, y });
+      
+      // Calculate distance from center for glow intensity
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      const distance = Math.sqrt(
+        Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2)
+      );
+      const maxDistance = Math.sqrt(Math.pow(centerX, 2) + Math.pow(centerY, 2));
+      const normalizedDistance = Math.min(distance / (maxDistance * 0.5), 1);
+      setMouseDistance(normalizedDistance);
+      setIsNear(normalizedDistance < 0.4);
     };
 
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
@@ -318,30 +331,113 @@ export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorB
   return (
     <motion.div
       className={`relative ${className}`}
+      style={{ perspective: "1000px" }}
       animate={{
         x: mousePosition.x,
         y: mousePosition.y,
-        rotateY: mousePosition.x * 2,
-        rotateX: -mousePosition.y * 2,
       }}
-      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      transition={{ type: "spring", stiffness: 120, damping: 25 }}
     >
-      {/* Soft ambient glow */}
-      <div className="absolute inset-0 -m-8 bg-gradient-radial from-bubly-violet/25 via-bubly-pink/15 to-transparent blur-3xl animate-breathe" />
+      {/* Outer soft glow - responds to mouse proximity */}
+      <motion.div 
+        className="absolute inset-0 -m-16 bg-gradient-radial from-bubly-violet/20 via-bubly-sky/10 to-transparent blur-[60px] rounded-full"
+        animate={{
+          opacity: isNear ? 0.9 : 0.4,
+          scale: isNear ? 1.3 : 1,
+        }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      />
       
-      {/* Bubbo with gentle floating animation */}
-      <motion.img
-        src={bubboDefault}
-        alt="Bubbo"
-        className={`${sizeClasses[size]} object-contain drop-shadow-[0_30px_60px_rgba(167,139,250,0.4)]`}
-        animate={{ 
-          y: [0, -8, 0],
+      {/* Inner glow - breathing animation */}
+      <motion.div 
+        className="absolute inset-0 -m-8 bg-gradient-radial from-bubly-pink/25 via-bubly-violet/15 to-transparent blur-3xl rounded-full"
+        animate={{
+          opacity: [0.5, 0.8, 0.5],
+          scale: [1, 1.1, 1],
         }}
-        transition={{ 
-          duration: 4, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Shimmer highlight effect */}
+      <motion.div 
+        className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-8 bg-gradient-to-r from-transparent via-white/10 to-transparent blur-xl rounded-full"
+        animate={{
+          opacity: [0.3, 0.6, 0.3],
+          x: [-20, 20, -20],
         }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      
+      {/* 3D container with perspective transform */}
+      <motion.div
+        className="relative"
+        animate={{
+          rotateY: mousePosition.x * 3,
+          rotateX: -mousePosition.y * 2,
+        }}
+        transition={{ type: "spring", stiffness: 150, damping: 20 }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Shadow layer for depth */}
+        <motion.div
+          className="absolute inset-0 top-4"
+          animate={{
+            x: mousePosition.x * -0.5,
+            y: Math.abs(mousePosition.y) * 0.3 + 10,
+            opacity: isNear ? 0.25 : 0.15,
+          }}
+          transition={{ type: "spring", stiffness: 150, damping: 20 }}
+        >
+          <div className={`${sizeClasses[size]} bg-bubly-violet/30 rounded-full blur-2xl`} />
+        </motion.div>
+
+        {/* Main Bubbo image with floating + subtle rotation */}
+        <motion.img
+          src={bubboDefault}
+          alt="Bubbo"
+          className={`${sizeClasses[size]} object-contain relative z-10`}
+          style={{
+            filter: `drop-shadow(0 ${isNear ? 35 : 25}px ${isNear ? 70 : 50}px rgba(167,139,250,${isNear ? 0.5 : 0.35}))`,
+          }}
+          animate={{ 
+            y: [0, -10, 0],
+            rotate: [-1, 1, -1],
+            scale: isNear ? 1.02 : 1,
+          }}
+          transition={{ 
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" },
+            scale: { duration: 0.4, ease: "easeOut" },
+          }}
+        />
+      </motion.div>
+
+      {/* Subtle particle accents */}
+      <motion.div
+        className="absolute -top-2 -right-2 w-2 h-2 rounded-full bg-bubly-sky/60"
+        animate={{
+          y: [0, -15, 0],
+          opacity: [0.4, 0.8, 0.4],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute -bottom-1 -left-3 w-1.5 h-1.5 rounded-full bg-bubly-pink/50"
+        animate={{
+          y: [0, -12, 0],
+          opacity: [0.3, 0.7, 0.3],
+        }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="absolute top-1/3 -right-4 w-1 h-1 rounded-full bg-bubly-violet/40"
+        animate={{
+          y: [0, -10, 0],
+          x: [0, 5, 0],
+          opacity: [0.2, 0.6, 0.2],
+        }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
     </motion.div>
   );
