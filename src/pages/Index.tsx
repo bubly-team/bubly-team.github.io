@@ -347,27 +347,88 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <ScrollReveal direction="scale">
-            <GlassCard className="glass-strong text-center py-16 px-8">
-              <Bubbo size="lg" className="mx-auto mb-8" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Start Using <span className="gradient-text">Bubly</span>
+      {/* CTA Section - Premium Immersive */}
+      <section className="py-32 relative overflow-hidden">
+        {/* Layered ambient backgrounds */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bubly-violet/5 to-bubly-violet/10 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-bubly-violet/20 via-bubly-pink/10 to-transparent blur-3xl opacity-60 pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-bubly-sky/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-bubly-pink/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <ScrollReveal direction="up">
+            <div className="max-w-4xl mx-auto text-center">
+              {/* Floating Bubbo with enhanced glow */}
+              <div className="relative inline-block mb-12">
+                <div className="absolute inset-0 -m-8 bg-gradient-radial from-bubly-violet/30 via-bubly-pink/15 to-transparent blur-2xl animate-breathe" />
+                <div className="absolute inset-0 -m-16 rounded-full border border-bubly-violet/10 animate-spin-slow" style={{ animationDuration: "30s" }} />
+                <div className="absolute inset-0 -m-24 rounded-full border border-bubly-pink/5 animate-spin-slow" style={{ animationDuration: "45s", animationDirection: "reverse" }} />
+                <Bubbo size="lg" className="relative animate-float-gentle drop-shadow-[0_20px_50px_rgba(167,139,250,0.4)]" />
+              </div>
+              
+              {/* Headline */}
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Your Relationships
+                <br />
+                <span className="gradient-text">Deserve Better</span>
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                Download now and let Bubbo help you maintain every precious relationship in your life.
+              
+              {/* Subtext */}
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+                Join thousands who use Bubly to nurture meaningful connections. 
+                Download now and let Bubbo be your social companion.
               </p>
-              <a
-                href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-bubly text-white font-semibold transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-lg"
-              >
-                Free Download
-              </a>
-            </GlassCard>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-bubly text-white font-semibold transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(167,139,250,0.5)] hover:scale-[1.03] shadow-xl"
+                >
+                  <svg className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                  Download Free on App Store
+                </a>
+                
+                <Link
+                  to="/features"
+                  className="group inline-flex items-center gap-2 px-8 py-5 text-muted-foreground hover:text-foreground font-medium transition-all duration-300"
+                >
+                  Learn more about features
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+              
+              {/* Trust indicators */}
+              <div className="mt-16 pt-12 border-t border-white/5">
+                <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground/60">
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-2">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div 
+                          key={i} 
+                          className="w-8 h-8 rounded-full bg-gradient-to-br from-bubly-sky/40 to-bubly-violet/40 border-2 border-background flex items-center justify-center text-xs font-medium"
+                        >
+                          {['🎉', '💝', '✨', '🌟'][i-1]}
+                        </div>
+                      ))}
+                    </div>
+                    <span>Loved by users worldwide</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-bubly-violet">★★★★★</span>
+                    <span>5.0 App Store Rating</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span>🔒</span>
+                    <span>Privacy First</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </ScrollReveal>
         </div>
       </section>
