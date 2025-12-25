@@ -133,45 +133,51 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right - Visual */}
-            <div className="flex-1 flex justify-center items-center w-full max-w-md lg:max-w-lg xl:max-w-xl">
-              <div className="relative w-full aspect-square max-w-[400px] lg:max-w-[480px]">
+            {/* Right - Bubbo with floating emojis */}
+            <div className="flex-1 flex justify-center items-center w-full">
+              <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] lg:w-[420px] lg:h-[420px]">
                 
-                {/* Bubbo - Center */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+                {/* Floating Emojis - Campus & Friends theme */}
+                <div className="absolute -top-2 left-8 text-3xl sm:text-4xl animate-float-gentle" style={{ animationDuration: "4s" }}>🎓</div>
+                <div className="absolute top-8 -right-2 text-2xl sm:text-3xl animate-float-gentle" style={{ animationDuration: "5s", animationDelay: "0.5s" }}>🎂</div>
+                <div className="absolute top-1/4 -left-4 text-2xl sm:text-3xl animate-float-gentle" style={{ animationDuration: "6s", animationDelay: "1s" }}>💝</div>
+                <div className="absolute bottom-1/4 -right-2 text-3xl sm:text-4xl animate-float-gentle" style={{ animationDuration: "5.5s", animationDelay: "1.5s" }}>✨</div>
+                <div className="absolute -bottom-2 left-12 text-2xl sm:text-3xl animate-float-gentle" style={{ animationDuration: "4.5s", animationDelay: "2s" }}>🎉</div>
+                <div className="absolute bottom-8 right-8 text-2xl animate-float-gentle" style={{ animationDuration: "5s", animationDelay: "2.5s" }}>📚</div>
+                <div className="absolute top-1/2 -left-6 text-xl sm:text-2xl animate-float-gentle" style={{ animationDuration: "6s", animationDelay: "0.8s" }}>🫶</div>
+                <div className="absolute top-12 left-1/4 text-xl animate-float-gentle" style={{ animationDuration: "5s", animationDelay: "1.2s" }}>☕</div>
+
+                {/* Soft glow behind Bubbo */}
+                <div className="absolute inset-0 m-16 bg-gradient-radial from-bubly-violet/20 via-bubly-pink/10 to-transparent blur-3xl rounded-full" />
+                
+                {/* Bubbo - Center with enhanced presence */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
                   <FollowCursorBubbo size="xl" />
                 </div>
 
-                {/* App Screenshot - Floating behind */}
-                <div 
-                  className="absolute top-0 right-0 w-[55%] sm:w-[50%] animate-float-gentle z-10"
-                  style={{ animationDuration: "6s" }}
-                >
-                  <div className="rounded-[1.5rem] overflow-hidden shadow-2xl shadow-black/20 border border-white/10">
-                    <img src={screenshot3} alt="Bubly App" className="w-full" />
-                  </div>
-                </div>
-
-                {/* QR Code Card - Bottom left */}
-                <div 
-                  className="absolute bottom-4 left-0 glass backdrop-blur-xl rounded-2xl p-4 border border-white/10 shadow-xl animate-float-gentle z-30 hidden sm:block"
-                  style={{ animationDelay: "2s", animationDuration: "7s" }}
-                >
-                  <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-                    <div className="p-1.5 bg-white rounded-xl">
-                      <img src={appQRCode} alt="QR Code" className="w-14 h-14" />
-                    </div>
-                    <div className="text-left">
-                      <p className="text-xs text-muted-foreground">Scan to</p>
-                      <p className="text-sm font-semibold">Download</p>
-                    </div>
-                  </a>
-                </div>
-
-                {/* Decorative orbit */}
-                <div className="absolute inset-0 m-8 rounded-full border border-bubly-violet/10 animate-spin-slow" style={{ animationDuration: "30s" }} />
+                {/* Decorative rings */}
+                <div className="absolute inset-0 m-4 rounded-full border border-bubly-sky/10 animate-spin-slow" style={{ animationDuration: "25s" }} />
+                <div className="absolute inset-0 m-12 rounded-full border border-dashed border-bubly-violet/10 animate-spin-slow" style={{ animationDuration: "35s", animationDirection: "reverse" }} />
               </div>
             </div>
+          </div>
+
+          {/* QR Code - Below hero on mobile, floating on desktop */}
+          <div className="mt-8 flex justify-center lg:hidden">
+            <a 
+              href={APP_STORE_URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10"
+            >
+              <div className="p-1 bg-white rounded-lg">
+                <img src={appQRCode} alt="QR Code" className="w-12 h-12" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-muted-foreground">Scan to</p>
+                <p className="text-sm font-semibold">Download App</p>
+              </div>
+            </a>
           </div>
         </div>
         
