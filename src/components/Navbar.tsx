@@ -72,9 +72,10 @@ export const Navbar = () => {
             href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-full bg-gradient-bubly text-white font-medium text-sm transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-lg"
+            className="group relative px-5 py-2.5 rounded-full bg-gradient-bubly text-white font-medium text-sm overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-bubly-violet/30"
           >
-            Download
+            <span className="relative z-10">Download</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
           </a>
         </div>
 
