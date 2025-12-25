@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import all Bubbo poses
@@ -27,6 +27,7 @@ interface InteractiveBubboProps {
   className?: string;
   enableClick?: boolean;
   showTooltip?: boolean;
+  enableEasterEgg?: boolean;
 }
 
 const sizeClasses = {
@@ -45,6 +46,58 @@ const tooltips: Record<BubboPose, string> = {
   "no-idea": "I don't know!",
 };
 
+// Easter egg particle component
+const EasterEggParticles = ({ isActive }: { isActive: boolean }) => {
+  const particles = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    emoji: ["✨", "🌟", "💫", "⭐", "🎉", "🎊", "💖", "🫧"][i % 8],
+    angle: (i * 360) / 20,
+    delay: i * 0.05,
+  }));
+
+  return (
+    <AnimatePresence>
+      {isActive && (
+        <>
+          {particles.map((particle) => (
+            <motion.span
+              key={particle.id}
+              className="absolute text-lg pointer-events-none z-50"
+              initial={{ 
+                opacity: 1, 
+                scale: 0,
+                x: 0,
+                y: 0,
+              }}
+              animate={{ 
+                opacity: [1, 1, 0],
+                scale: [0, 1.5, 1],
+                x: Math.cos(particle.angle * Math.PI / 180) * 120,
+                y: Math.sin(particle.angle * Math.PI / 180) * 120,
+              }}
+              exit={{ opacity: 0 }}
+              transition={{ 
+                duration: 1,
+                delay: particle.delay,
+                ease: "easeOut"
+              }}
+            >
+              {particle.emoji}
+            </motion.span>
+          ))}
+          {/* Central burst */}
+          <motion.div
+            className="absolute inset-0 rounded-full bg-gradient-radial from-bubly-pink/50 via-bubly-violet/30 to-transparent"
+            initial={{ scale: 0, opacity: 0.8 }}
+            animate={{ scale: 3, opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
+        </>
+      )}
+    </AnimatePresence>
+  );
+};
+
 export const InteractiveBubbo = ({
   size = "md",
   initialPose = "default",
@@ -52,15 +105,52 @@ export const InteractiveBubbo = ({
   className = "",
   enableClick = true,
   showTooltip = true,
+  enableEasterEgg = true,
 }: InteractiveBubboProps) => {
   const [currentPose, setCurrentPose] = useState<BubboPose>(initialPose);
   const [isHovered, setIsHovered] = useState(false);
   const [clickCount, setClickCount] = useState(0);
+  const [rapidClickCount, setRapidClickCount] = useState(0);
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+  const [easterEggMessage, setEasterEggMessage] = useState("");
+  const [lastClickTime, setLastClickTime] = useState(0);
 
   const poses: BubboPose[] = ["default", "wave", "point", "thinking", "no-idea"];
+  const easterEggMessages = [
+    "Woohoo! You found me! 🎉",
+    "That tickles! 😆",
+    "I'm getting dizzy! 🌀",
+    "Best friends forever! 💖",
+    "You're amazing! ✨",
+  ];
+
+  const triggerEasterEgg = useCallback(() => {
+    setShowEasterEgg(true);
+    setEasterEggMessage(easterEggMessages[Math.floor(Math.random() * easterEggMessages.length)]);
+    setTimeout(() => setShowEasterEgg(false), 2000);
+    setRapidClickCount(0);
+  }, []);
 
   const handleClick = () => {
     if (!enableClick) return;
+    
+    const now = Date.now();
+    
+    // Easter egg: detect rapid clicks (within 500ms)
+    if (enableEasterEgg && now - lastClickTime < 500) {
+      setRapidClickCount(prev => {
+        const newCount = prev + 1;
+        if (newCount >= 5) {
+          triggerEasterEgg();
+          return 0;
+        }
+        return newCount;
+      });
+    } else {
+      setRapidClickCount(1);
+    }
+    setLastClickTime(now);
+    
     const nextIndex = (clickCount + 1) % poses.length;
     setCurrentPose(poses[nextIndex]);
     setClickCount(nextIndex);
@@ -88,13 +178,23 @@ export const InteractiveBubbo = ({
       onClick={handleClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      animate={showEasterEgg ? {
+        rotate: [0, -10, 10, -10, 10, 0],
+        scale: [1, 1.2, 1.2, 1.2, 1.2, 1],
+      } : {}}
+      transition={{ duration: 0.5 }}
     >
+      {/* Easter egg particles */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <EasterEggParticles isActive={showEasterEgg} />
+      </div>
+
       {/* Glow effect */}
       <motion.div
         className="absolute inset-0 -m-4 bg-gradient-radial from-bubly-violet/30 via-bubly-pink/20 to-transparent blur-2xl"
         animate={{
-          opacity: isHovered ? 0.8 : 0.4,
-          scale: isHovered ? 1.1 : 1,
+          opacity: showEasterEgg ? 1 : isHovered ? 0.8 : 0.4,
+          scale: showEasterEgg ? 1.5 : isHovered ? 1.1 : 1,
         }}
         transition={{ duration: 0.3 }}
       />
@@ -113,9 +213,24 @@ export const InteractiveBubbo = ({
         />
       </AnimatePresence>
 
-      {/* Tooltip */}
+      {/* Easter egg message */}
       <AnimatePresence>
-        {showTooltip && isHovered && (
+        {showEasterEgg && (
+          <motion.div
+            className="absolute -top-14 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-gradient-to-r from-bubly-pink/90 to-bubly-violet/90 backdrop-blur-md border border-white/30 text-sm font-bold whitespace-nowrap z-30 shadow-lg"
+            initial={{ opacity: 0, y: 20, scale: 0.5 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            {easterEggMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Regular Tooltip */}
+      <AnimatePresence>
+        {showTooltip && isHovered && !showEasterEgg && (
           <motion.div
             className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium whitespace-nowrap z-20"
             initial={{ opacity: 0, y: 10 }}
