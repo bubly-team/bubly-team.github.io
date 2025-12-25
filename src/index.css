@@ -237,6 +237,15 @@
       radial-gradient(at 80% 50%, hsl(var(--bubly-blue) / 0.15) 0px, transparent 50%),
       radial-gradient(at 0% 100%, hsl(var(--bubly-violet) / 0.1) 0px, transparent 50%);
   }
+  
+  /* Hide scrollbar for horizontal scroll areas */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Gentle float - very subtle up/down movement */
