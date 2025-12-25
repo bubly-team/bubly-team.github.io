@@ -4,32 +4,39 @@ import { Bubbo } from "@/components/Bubbo";
 import { BubboGallery, FloatingBubbos } from "@/components/BubboGallery";
 import { HeroParticles, AmbientOrbs, GradientMesh } from "@/components/HeroParticles";
 import { GlassCard } from "@/components/GlassCard";
-import { ScrollReveal, StaggerReveal } from "@/hooks/use-scroll-reveal";
-import { Users, Sparkles, Bell, ArrowRight } from "lucide-react";
+import { ScrollReveal } from "@/hooks/use-scroll-reveal";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // App screenshots
 import screenshot1 from "@/assets/app-screenshot-1.png";
+import screenshot2 from "@/assets/app-screenshot-2.png";
 import screenshot3 from "@/assets/app-screenshot-3.png";
 import screenshot4 from "@/assets/app-screenshot-4.png";
 import screenshot5 from "@/assets/app-screenshot-5.png";
 import screenshot6 from "@/assets/app-screenshot-6.png";
 
-const features = [
+const coreFeatures = [
   {
-    icon: Users,
-    title: "Smart Contact Management",
-    description: "Organize and categorize your connections effortlessly",
+    title: "Smart Contacts",
+    subtitle: "Know Your Bubbles",
+    description: "Track hobbies, interests, and milestones. Add personal notes and never forget what matters.",
+    screenshot: screenshot5,
+    gradient: "from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30",
   },
   {
-    icon: Sparkles,
-    title: "AI-Powered Greetings",
-    description: "Generate personalized messages for every occasion",
+    title: "AI Greetings",
+    subtitle: "Craft Perfect Wishes",
+    description: "Generate personalized messages in any vibe—warm, fun, formal, or short.",
+    screenshot: screenshot4,
+    gradient: "from-bubly-pink/30 via-bubly-violet/20 to-bubly-sky/30",
   },
   {
-    icon: Bell,
-    title: "Intelligent Reminders",
-    description: "Never miss an important moment to connect",
+    title: "Event Calendar",
+    subtitle: "Never Miss a Moment",
+    description: "Track birthdays, anniversaries, and special moments with an intelligent calendar.",
+    screenshot: screenshot6,
+    gradient: "from-bubly-violet/30 via-bubly-pink/20 to-bubly-sky/30",
   },
 ];
 
@@ -270,41 +277,71 @@ const Index = () => {
         <BubboGallery />
       </section>
 
-      {/* Features Preview Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="gradient-text">Core Features</span>
+      {/* Core Features Section - Premium Design */}
+      <section className="py-24 overflow-hidden relative">
+        {/* Ambient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bubly-violet/3 to-transparent pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative">
+          <ScrollReveal className="text-center mb-20">
+            <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
+              Core Features
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Everything You Need to <br className="hidden md:block" />
+              <span className="gradient-text">Stay Connected</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Bubly combines AI technology with thoughtful design to make relationship management effortless
             </p>
           </ScrollReveal>
           
-          <StaggerReveal 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            staggerDelay={150}
-            direction="scale"
-          >
-            {features.map((feature) => (
-              <GlassCard key={feature.title} className="text-center group">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-bubly mb-6 transition-all duration-500 group-hover:scale-105">
-                  <feature.icon className="w-8 h-8 text-white" />
+          {/* Feature Cards - Horizontal Scroll on Mobile, Grid on Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            {coreFeatures.map((feature, index) => (
+              <ScrollReveal 
+                key={feature.title} 
+                delay={index * 150} 
+                direction="up"
+                className="group"
+              >
+                <div className="relative h-full">
+                  {/* Screenshot with glow */}
+                  <div className="relative mb-8">
+                    <div className={`absolute -inset-4 bg-gradient-to-br ${feature.gradient} rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700`} />
+                    <div className="relative rounded-[1.5rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.2)] border border-white/10 transition-transform duration-700 group-hover:-translate-y-2">
+                      <img 
+                        src={feature.screenshot} 
+                        alt={feature.title} 
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Text content */}
+                  <div className="text-center px-2">
+                    <span className="text-xs font-medium text-muted-foreground/60 tracking-widest uppercase mb-2 block">
+                      {feature.subtitle}
+                    </span>
+                    <h3 className="text-xl font-bold mb-3 group-hover:gradient-text transition-all duration-500">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </GlassCard>
+              </ScrollReveal>
             ))}
-          </StaggerReveal>
+          </div>
           
-          <ScrollReveal delay={400} className="text-center mt-12">
+          <ScrollReveal delay={500} className="text-center mt-16">
             <Link
               to="/features"
-              className="inline-flex items-center gap-2 text-primary font-medium transition-all duration-300 hover:gap-3"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-500 bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-white/20"
             >
               Explore All Features
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </ScrollReveal>
         </div>
