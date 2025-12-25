@@ -197,13 +197,19 @@ const Index = () => {
         {/* Subtle background glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-bubly-violet/5 via-transparent to-transparent pointer-events-none" />
         
+        {/* Floating emojis */}
+        <div className="absolute top-12 left-[10%] text-2xl sm:text-3xl animate-float-gentle opacity-60" style={{ animationDuration: "6s" }}>📱</div>
+        <div className="absolute top-1/3 right-[8%] text-2xl sm:text-3xl animate-float-gentle opacity-60" style={{ animationDuration: "5s", animationDelay: "1s" }}>💬</div>
+        <div className="absolute bottom-16 left-[15%] text-xl sm:text-2xl animate-float-gentle opacity-50" style={{ animationDuration: "7s", animationDelay: "2s" }}>🌸</div>
+        <div className="absolute bottom-1/4 right-[12%] text-xl animate-float-gentle opacity-50" style={{ animationDuration: "5.5s", animationDelay: "0.5s" }}>👋</div>
+        
         <div className="container mx-auto px-4 relative">
           <ScrollReveal className="text-center mb-20">
             <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
               App Preview
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              See <span className="gradient-text">Bubly</span> in Action
+              See <span className="gradient-text">Bubly</span> in Action ✨
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               A beautifully designed app that makes managing relationships feel natural
@@ -221,7 +227,7 @@ const Index = () => {
                     <img src={screenshot6} alt="Event Calendar" className="w-full h-auto" />
                   </div>
                 </div>
-                <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">Event Calendar</p>
+                <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">📅 Event Calendar</p>
               </div>
             </ScrollReveal>
 
@@ -234,7 +240,7 @@ const Index = () => {
                     <img src={screenshot3} alt="Smart Dashboard" className="w-full h-auto" />
                   </div>
                 </div>
-                <p className="text-center mt-5 text-sm font-semibold gradient-text">Smart Dashboard</p>
+                <p className="text-center mt-5 text-sm font-semibold gradient-text">🏠 Smart Dashboard</p>
               </div>
             </ScrollReveal>
 
@@ -247,7 +253,7 @@ const Index = () => {
                     <img src={screenshot4} alt="AI Greetings" className="w-full h-auto" />
                   </div>
                 </div>
-                <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">AI Greetings</p>
+                <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">💌 AI Greetings</p>
               </div>
             </ScrollReveal>
           </div>
@@ -255,20 +261,27 @@ const Index = () => {
       </section>
 
       {/* Feature Showcase Section */}
-      <section className="py-24 overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="py-24 overflow-hidden relative">
+        {/* Floating campus emojis */}
+        <div className="absolute top-20 left-[5%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "8s" }}>🎒</div>
+        <div className="absolute top-1/2 right-[6%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "6s", animationDelay: "1.5s" }}>📝</div>
+        <div className="absolute bottom-20 left-[8%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "7s", animationDelay: "3s" }}>🎵</div>
+        <div className="absolute top-1/3 left-[3%] text-xl animate-float-gentle opacity-30" style={{ animationDuration: "9s", animationDelay: "2s" }}>🌟</div>
+        <div className="absolute bottom-1/3 right-[5%] text-xl animate-float-gentle opacity-30" style={{ animationDuration: "7.5s", animationDelay: "0.5s" }}>💫</div>
+        
+        <div className="container mx-auto px-4 relative">
           {/* Feature 1: Contact Management */}
           <div className="flex flex-col lg:flex-row items-center gap-16 mb-32">
             <ScrollReveal direction="right" className="flex-1 text-center lg:text-left space-y-6">
               <span className="inline-block px-3 py-1 rounded-full bg-bubly-violet/10 text-bubly-violet text-xs font-medium tracking-wide">
-                Contact Details
+                👥 Contact Details
               </span>
               <h3 className="text-2xl md:text-3xl font-bold leading-tight">
                 Know Your <span className="gradient-text">Bubbles</span> Better
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
                 Keep track of hobbies, interests, and important milestones in one place. 
-                Add personal notes and never forget what matters to your friends.
+                Add personal notes and never forget what matters to your friends. 🫶
               </p>
             </ScrollReveal>
             <ScrollReveal direction="left" delay={200} className="flex-1 flex justify-center">
@@ -277,6 +290,8 @@ const Index = () => {
                 <div className="relative max-w-[280px] rounded-[2rem] overflow-hidden shadow-[0_25px_70px_-20px_rgba(0,0,0,0.25)] border border-white/10">
                   <img src={screenshot5} alt="Contact Management" className="w-full h-auto" />
                 </div>
+                {/* Decorative emoji */}
+                <div className="absolute -top-4 -right-4 text-2xl animate-float-gentle" style={{ animationDuration: "4s" }}>💝</div>
               </div>
             </ScrollReveal>
           </div>
@@ -285,14 +300,14 @@ const Index = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
             <ScrollReveal direction="left" className="flex-1 text-center lg:text-left space-y-6">
               <span className="inline-block px-3 py-1 rounded-full bg-bubly-pink/10 text-bubly-pink text-xs font-medium tracking-wide">
-                Your Universe
+                🎂 Your Universe
               </span>
               <h3 className="text-2xl md:text-3xl font-bold leading-tight">
                 Relationships <span className="gradient-text">Deserve</span> to Be Remembered
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
                 Your universe of friends at a glance. Track birthdays, anniversaries, 
-                and special moments with an intelligent calendar that keeps you connected.
+                and special moments with an intelligent calendar that keeps you connected. ✨
               </p>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={200} className="flex-1 flex justify-center">
@@ -301,6 +316,8 @@ const Index = () => {
                 <div className="relative max-w-[280px] rounded-[2rem] overflow-hidden shadow-[0_25px_70px_-20px_rgba(0,0,0,0.25)] border border-white/10">
                   <img src={screenshot1} alt="Home Dashboard" className="w-full h-auto" />
                 </div>
+                {/* Decorative emoji */}
+                <div className="absolute -bottom-4 -left-4 text-2xl animate-float-gentle" style={{ animationDuration: "5s", animationDelay: "0.5s" }}>🎉</div>
               </div>
             </ScrollReveal>
           </div>
@@ -317,14 +334,20 @@ const Index = () => {
         {/* Ambient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bubly-violet/3 to-transparent pointer-events-none" />
         
+        {/* Floating campus/friendship emojis */}
+        <div className="absolute top-16 right-[10%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "6s" }}>🎓</div>
+        <div className="absolute top-1/4 left-[7%] text-xl animate-float-gentle opacity-35" style={{ animationDuration: "7s", animationDelay: "1s" }}>☕</div>
+        <div className="absolute bottom-1/4 right-[8%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "8s", animationDelay: "2s" }}>🤝</div>
+        <div className="absolute bottom-20 left-[12%] text-xl animate-float-gentle opacity-35" style={{ animationDuration: "6.5s", animationDelay: "0.5s" }}>📸</div>
+        
         <div className="container mx-auto px-4 relative">
           <ScrollReveal className="text-center mb-20">
             <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
-              Core Features
+              🚀 Core Features
             </span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Everything You Need to <br className="hidden md:block" />
-              <span className="gradient-text">Stay Connected</span>
+              <span className="gradient-text">Stay Connected</span> 🫂
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Bubly combines AI technology with thoughtful design to make relationship management effortless
@@ -398,6 +421,14 @@ const Index = () => {
         <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-bubly-sky/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-bubly-pink/10 rounded-full blur-3xl pointer-events-none" />
         
+        {/* Floating celebration emojis */}
+        <div className="absolute top-20 left-[15%] text-2xl animate-float-gentle opacity-50" style={{ animationDuration: "5s" }}>🎊</div>
+        <div className="absolute top-1/3 right-[12%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "6s", animationDelay: "1s" }}>💕</div>
+        <div className="absolute bottom-1/3 left-[10%] text-2xl animate-float-gentle opacity-45" style={{ animationDuration: "7s", animationDelay: "2s" }}>🌈</div>
+        <div className="absolute bottom-24 right-[15%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "5.5s", animationDelay: "0.5s" }}>🎈</div>
+        <div className="absolute top-1/2 left-[5%] text-xl animate-float-gentle opacity-35" style={{ animationDuration: "8s", animationDelay: "1.5s" }}>🌻</div>
+        <div className="absolute top-1/4 right-[5%] text-xl animate-float-gentle opacity-35" style={{ animationDuration: "6.5s", animationDelay: "3s" }}>💐</div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal direction="up">
             <div className="max-w-4xl mx-auto text-center">
@@ -419,13 +450,13 @@ const Index = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 Your Relationships
                 <br />
-                <span className="gradient-text">Deserve Better</span>
+                <span className="gradient-text">Deserve Better</span> 💝
               </h2>
               
               {/* Subtext */}
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
                 Join thousands who use Bubly to nurture meaningful connections. 
-                Download now and let Bubbo be your social companion.
+                Download now and let Bubbo be your social companion. 🎓📚
               </p>
               
               {/* CTA Buttons + QR Code */}
