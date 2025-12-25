@@ -76,43 +76,59 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section - Immersive */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-16 md:py-32 overflow-hidden">
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-b from-bubly-violet/5 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-bubly-sky/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-bubly-pink/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-bubly-sky/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-1/3 right-1/4 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-bubly-pink/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-16 lg:gap-24">
+            {/* Mobile: Bubbo first for better visual hierarchy */}
+            <ScrollReveal direction="up" delay={100} className="lg:hidden flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 -m-8 bg-gradient-radial from-bubly-violet/25 via-bubly-pink/15 to-transparent blur-2xl animate-breathe" />
+                <div className="absolute inset-0 -m-12 rounded-full border border-bubly-violet/10 animate-spin-slow" style={{ animationDuration: "30s" }} />
+                <div className="relative">
+                  <img 
+                    src={bubboMain} 
+                    alt="Bubbo" 
+                    className="w-40 h-40 object-contain animate-float-gentle drop-shadow-[0_20px_40px_rgba(167,139,250,0.4)]"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-2 w-10 h-10 animate-drift">
+                  <img src={bubboCool} alt="" className="w-full h-full object-contain opacity-80" />
+                </div>
+                <div className="absolute -bottom-2 -left-4 w-9 h-9 animate-drift" style={{ animationDelay: "2s" }}>
+                  <img src={bubboMusic} alt="" className="w-full h-full object-contain opacity-80" />
+                </div>
+              </div>
+            </ScrollReveal>
+
             {/* Content */}
             <ScrollReveal direction="right" className="flex-1 text-center lg:text-left">
-              <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-6 tracking-wide uppercase">
+              <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full glass text-[10px] md:text-xs font-medium text-muted-foreground mb-4 md:mb-6 tracking-wide uppercase">
                 About Us
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-8 leading-tight">
                 Meet <span className="gradient-text">Bubbo</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              <p className="text-sm md:text-xl text-muted-foreground leading-relaxed mb-4 md:mb-6">
                 Bubbo is Bubly's mascot, symbolizing warmth, connection, and care.
                 Like bubbles, relationships need tender attention to shine bright.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">
                 We created Bubly to help everyone maintain meaningful relationships 
                 in this busy world—making every greeting timely and every care remembered.
               </p>
             </ScrollReveal>
 
-            {/* Bubbo Showcase */}
-            <ScrollReveal direction="left" delay={200} className="flex-1 flex justify-center">
+            {/* Desktop: Bubbo Showcase */}
+            <ScrollReveal direction="left" delay={200} className="hidden lg:flex flex-1 justify-center">
               <div className="relative">
-                {/* Ambient glow */}
                 <div className="absolute inset-0 -m-12 bg-gradient-radial from-bubly-violet/25 via-bubly-pink/15 to-transparent blur-3xl animate-breathe" />
-                
-                {/* Orbital rings */}
                 <div className="absolute inset-0 -m-20 rounded-full border border-bubly-violet/10 animate-spin-slow" style={{ animationDuration: "30s" }} />
                 <div className="absolute inset-0 -m-32 rounded-full border border-bubly-pink/5 animate-spin-slow" style={{ animationDuration: "45s", animationDirection: "reverse" }} />
-                
-                {/* Main Bubbo */}
                 <div className="relative">
                   <img 
                     src={bubboMain} 
@@ -120,8 +136,6 @@ const About = () => {
                     className="w-64 h-64 object-contain animate-float-gentle drop-shadow-[0_30px_60px_rgba(167,139,250,0.4)]"
                   />
                 </div>
-                
-                {/* Floating mini Bubbos */}
                 <div className="absolute -top-8 -right-4 w-16 h-16 animate-drift">
                   <img src={bubboCool} alt="" className="w-full h-full object-contain opacity-80" />
                 </div>
@@ -138,26 +152,25 @@ const About = () => {
       </section>
 
       {/* Our Story - Premium */}
-      <section className="py-24 overflow-hidden relative">
+      <section className="py-16 md:py-24 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bubly-violet/3 to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 relative">
           <ScrollReveal className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
+            <div className="text-center mb-6 md:mb-12">
+              <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full glass text-[10px] md:text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
                 Our Journey
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold">
+              <h2 className="text-2xl md:text-4xl font-bold">
                 The <span className="gradient-text">Story</span> Behind Bubly
               </h2>
             </div>
             
             <div className="relative">
-              {/* Subtle background glow */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-bubly-sky/10 via-bubly-violet/5 to-bubly-pink/10 rounded-3xl blur-2xl opacity-50" />
+              <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-br from-bubly-sky/10 via-bubly-violet/5 to-bubly-pink/10 rounded-2xl md:rounded-3xl blur-xl md:blur-2xl opacity-50" />
               
-              <div className="relative p-8 md:p-12 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <div className="relative p-5 md:p-12 rounded-2xl md:rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+                <div className="space-y-4 md:space-y-6 text-sm md:text-lg text-muted-foreground leading-relaxed">
                   <p>
                     In this digital age, we have countless ways to connect, yet we often forget to reach out.
                     Birthday wishes go unsent, holiday greetings arrive too late, and important people slowly fade into the noise of busy life.
@@ -179,18 +192,18 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-24 overflow-hidden">
+      <section className="py-12 md:py-24 overflow-hidden">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
+          <ScrollReveal className="text-center mb-8 md:mb-16">
+            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full glass text-[10px] md:text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
               What We Believe
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold">
+            <h2 className="text-2xl md:text-4xl font-bold">
               Our <span className="gradient-text">Values</span>
             </h2>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 max-w-5xl mx-auto">
             {values.map((value, index) => (
               <ScrollReveal 
                 key={value.title} 
@@ -198,14 +211,14 @@ const About = () => {
                 direction="up"
                 className="group"
               >
-                <div className="text-center p-6 rounded-2xl transition-all duration-500 hover:bg-white/5 border border-transparent hover:border-white/10">
-                  <div className="text-4xl mb-4 transition-transform duration-500 group-hover:scale-110">
+                <div className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl transition-all duration-500 hover:bg-white/5 border border-transparent hover:border-white/10">
+                  <div className="text-2xl md:text-4xl mb-2 md:mb-4 transition-transform duration-500 group-hover:scale-110">
                     {value.emoji}
                   </div>
-                  <h3 className="font-bold text-lg mb-2 group-hover:gradient-text transition-all duration-500">
+                  <h3 className="font-bold text-sm md:text-lg mb-1 md:mb-2 group-hover:gradient-text transition-all duration-500">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -215,24 +228,55 @@ const About = () => {
         </div>
       </section>
 
-      {/* Meet the Bubbos */}
-      <section className="py-24 overflow-hidden relative">
+      {/* Meet the Bubbos - Horizontal Scroll on Mobile */}
+      <section className="py-12 md:py-24 overflow-hidden relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bubly-pink/3 to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 relative">
-          <ScrollReveal className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
+          <ScrollReveal className="text-center mb-8 md:mb-16">
+            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full glass text-[10px] md:text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
               The Family
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4">
               Meet the <span className="gradient-text">Bubbos</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
+            <p className="text-xs md:text-base text-muted-foreground max-w-xl mx-auto">
               Each Bubbo represents a different personality, just like your diverse circle of friends
             </p>
           </ScrollReveal>
 
-          <div className="flex flex-wrap justify-center items-end gap-6 md:gap-10">
+          {/* Mobile: Horizontal Scroll */}
+          <div className="md:hidden">
+            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory -mx-4 px-4">
+              {[
+                { img: bubboMain, name: "Original", size: "w-20 h-20" },
+                { img: bubboCool, name: "Cool", size: "w-18 h-18" },
+                { img: bubboMusic, name: "Music", size: "w-18 h-18" },
+                { img: bubboArtist, name: "Artist", size: "w-18 h-18" },
+                { img: bubboProfessor, name: "Professor", size: "w-18 h-18" },
+                { img: bubboSport, name: "Sport", size: "w-18 h-18" },
+              ].map((bubbo, index) => (
+                <div key={bubbo.name} className="flex-shrink-0 snap-center">
+                  <div className="flex flex-col items-center">
+                    <div className="relative">
+                      <img 
+                        src={bubbo.img} 
+                        alt={bubbo.name}
+                        className={`${bubbo.size} object-contain`}
+                      />
+                    </div>
+                    <span className="mt-2 text-[10px] font-medium text-muted-foreground/60">
+                      {bubbo.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-xs text-muted-foreground/50 mt-1">← 左右滑動查看更多 →</p>
+          </div>
+
+          {/* Desktop: Flex wrap */}
+          <div className="hidden md:flex flex-wrap justify-center items-end gap-6 md:gap-10">
             {[
               { img: bubboMain, name: "Original", size: "w-28 h-28" },
               { img: bubboCool, name: "Cool", size: "w-24 h-24" },
@@ -267,25 +311,25 @@ const About = () => {
       </section>
 
       {/* FAQ Section - Premium */}
-      <section className="py-24 overflow-hidden">
+      <section className="py-12 md:py-24 overflow-hidden">
         <div className="container mx-auto px-4">
-          <ScrollReveal className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
+          <ScrollReveal className="text-center mb-8 md:mb-16">
+            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full glass text-[10px] md:text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
               FAQ
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-4">
               Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-xs md:text-base text-muted-foreground">
               Everything you need to know about Bubly
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={200} className="max-w-3xl mx-auto">
             <div className="relative">
-              <div className="absolute -inset-2 bg-gradient-to-br from-bubly-sky/5 via-bubly-violet/5 to-bubly-pink/5 rounded-3xl blur-xl" />
+              <div className="absolute -inset-2 bg-gradient-to-br from-bubly-sky/5 via-bubly-violet/5 to-bubly-pink/5 rounded-2xl md:rounded-3xl blur-xl" />
               
-              <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm overflow-hidden">
+              <div className="relative rounded-xl md:rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm overflow-hidden">
                 <Accordion type="single" collapsible className="w-full">
                   {faqs.map((faq, index) => (
                     <AccordionItem 
@@ -293,10 +337,10 @@ const About = () => {
                       value={`item-${index}`} 
                       className="border-white/5 last:border-0"
                     >
-                      <AccordionTrigger className="text-left px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors duration-300 text-base font-medium">
+                      <AccordionTrigger className="text-left px-4 md:px-6 py-4 md:py-5 hover:no-underline hover:bg-white/5 transition-colors duration-300 text-sm md:text-base font-medium">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-5 text-muted-foreground leading-relaxed">
+                      <AccordionContent className="px-4 md:px-6 pb-4 md:pb-5 text-xs md:text-base text-muted-foreground leading-relaxed">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
