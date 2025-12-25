@@ -5,6 +5,7 @@ import { HeroParticles, AmbientOrbs, GradientMesh, Sparkles } from "@/components
 import { GlassCard } from "@/components/GlassCard";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { FollowCursorBubbo, InteractiveBubbo } from "@/components/InteractiveBubbo";
+import { AIAssistantDemo } from "@/components/AIAssistantDemo";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -328,6 +329,36 @@ const Index = () => {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* AI Assistant Demo Section - Interactive */}
+      <section className="py-12 md:py-24 overflow-hidden relative">
+        {/* Ambient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bubly-sky/3 via-transparent to-bubly-pink/3 pointer-events-none" />
+
+        {/* Floating emojis - hidden on mobile */}
+        <div className="hidden md:block absolute top-20 left-[8%] text-3xl animate-float-gentle opacity-50" style={{ animationDuration: "6s" }}>💌</div>
+        <div className="hidden md:block absolute top-1/3 right-[10%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "7s", animationDelay: "1s" }}>✨</div>
+        <div className="hidden md:block absolute bottom-20 left-[12%] text-2xl animate-float-gentle opacity-45" style={{ animationDuration: "8s", animationDelay: "2s" }}>🎉</div>
+        <div className="hidden md:block absolute bottom-1/3 right-[8%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "6.5s", animationDelay: "0.5s" }}>💝</div>
+
+        <div className="container mx-auto px-4 relative">
+          <ScrollReveal className="text-center mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
+              ✨ Interactive Demo
+            </span>
+            <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">
+              Experience the <span className="gradient-text">AI Magic</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-lg">
+              See how Bubly's AI crafts personalized greetings that feel genuine and heartfelt
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200} direction="up">
+            <AIAssistantDemo />
+          </ScrollReveal>
         </div>
       </section>
 

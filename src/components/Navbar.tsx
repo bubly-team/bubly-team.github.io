@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import bubboImage from "@/assets/bubbo.png";
+import bubboLogo from "@/assets/bubbo-logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -39,14 +39,14 @@ export const Navbar = () => {
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="flex items-center gap-3 group"
         >
-          <img 
-            src={bubboImage} 
-            alt="Bubly" 
-            className="w-10 h-10 object-contain transition-all duration-500 group-hover:scale-105" 
+          <img
+            src={bubboLogo}
+            alt="Bubly"
+            className="w-10 h-10 object-contain transition-all duration-500 group-hover:scale-105"
           />
           <span className="text-2xl font-bold gradient-text">Bubly</span>
         </Link>

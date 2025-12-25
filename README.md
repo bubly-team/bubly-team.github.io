@@ -1,73 +1,347 @@
-# Welcome to your Lovable project
+# Bubly - AI Social Assistant 官方網站
 
-## Project info
+> Bubly App 的官方介紹網站，展示 AI 智能社交助理功能
+>
+> **目標市場**: 美國用戶
+> **開發團隊**: 台灣團隊
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 📱 專案簡介
 
-There are several ways of editing your application.
+這是 [Bubly App](https://apps.apple.com/us/app/bubly-social-assistant/id6754884488) 的官方網站，用於展示 App 的核心功能：
+- 智能聯絡人管理
+- AI 個性化祝福生成
+- 重要日期提醒
+- 互動式 Demo 展示
 
-**Use Lovable**
+### 🎨 設計風格
+- Glassmorphism（玻璃擬態）設計
+- 漸層色系：Sky Blue → Violet → Pink
+- 吉祥物 Bubbo 互動動畫
+- 響應式設計（支援手機/平板/桌面）
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 快速開始
 
-**Use your preferred IDE**
+### 環境需求
+- Node.js 16+ (建議使用 [nvm](https://github.com/nvm-sh/nvm) 安裝)
+- npm 或 yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 安裝步驟
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+# 1. Clone 專案
+git clone https://github.com/your-org/bubbo-s-world.git
+cd bubbo-s-world
 
-Follow these steps:
+# 2. 安裝相依套件
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. 啟動開發伺服器
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+開發伺服器會在 `http://localhost:8080` 啟動
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 建置生產版本
 
-**Use GitHub Codespaces**
+```bash
+# 建置專案
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# 預覽建置結果
+npm run preview
+```
 
-## What technologies are used for this project?
+建置檔案會輸出到 `dist/` 資料夾
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📁 專案結構
 
-## How can I deploy this project?
+```
+bubbo-s-world/
+├── src/
+│   ├── assets/              # 圖片素材
+│   │   ├── app-screenshot-*.png   # App 截圖
+│   │   ├── bubbo-*.png           # Bubbo 吉祥物圖片
+│   │   └── app-qrcode.png        # App Store QR Code
+│   ├── components/          # React 元件
+│   │   ├── AIAssistantDemo.tsx   # ⭐ AI 助手互動 Demo
+│   │   ├── BubboGallery.tsx      # Bubbo 圖庫
+│   │   ├── InteractiveBubbo.tsx  # 互動式 Bubbo
+│   │   ├── Layout.tsx            # 頁面版型
+│   │   ├── Navbar.tsx            # 導覽列
+│   │   └── ui/                   # shadcn-ui 元件
+│   ├── pages/               # 頁面
+│   │   ├── Index.tsx        # 首頁 ⭐
+│   │   ├── Features.tsx     # 功能介紹
+│   │   ├── About.tsx        # 關於我們
+│   │   ├── Contact.tsx      # 聯絡我們
+│   │   ├── Privacy.tsx      # 隱私政策
+│   │   └── Terms.tsx        # 服務條款
+│   ├── hooks/               # 自訂 Hooks
+│   ├── lib/                 # 工具函式
+│   ├── App.tsx              # 主要 App 元件
+│   ├── index.css            # 全域樣式
+│   └── main.tsx             # 進入點
+├── assets/                  # 原始設計素材
+│   ├── Bubbo Pose/         # Bubbo 姿勢圖
+│   ├── Bubbo Christmas Vibe/ # 聖誕主題 Bubbo
+│   └── Bubbo Avatar/       # Bubbo 頭像
+├── public/                  # 靜態檔案
+└── package.json
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## ✨ 核心功能說明
 
-Yes, you can!
+### 1. AI 助手互動 Demo (`AIAssistantDemo.tsx`)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**這是最新加入的核心功能！**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+位置：首頁的「Experience the AI Magic」區塊
+
+#### 功能流程：
+1. **選擇聯絡人** - 用戶選擇要發送訊息的對象（Megan/Alex/Sarah）
+2. **選擇氛圍** - 選擇訊息風格（溫馨/有趣/正式/簡短）
+3. **生成訊息** - Bubbo 思考動畫 + 打字機效果展示訊息
+4. **互動選項** - 複製訊息、換氛圍、重新開始
+
+#### 技術特點：
+- 使用 Framer Motion 製作流暢動畫
+- 3 步驟進度指示器
+- 預先設定的 12 組訊息（3 聯絡人 × 4 氛圍）
+- 完整的 RWD 響應式設計
+- 複製到剪貼簿功能
+
+#### 如何修改 Demo 內容：
+
+```typescript
+// 在 src/components/AIAssistantDemo.tsx 中
+
+// 修改聯絡人資料
+const mockContacts = [
+  {
+    id: 1,
+    name: "姓名",
+    relationship: "關係",
+    avatar: "🎨", // emoji 圖示
+    interests: "興趣愛好",
+    occasion: "場合",
+    color: "漸層色", // Tailwind 類別
+  },
+  // ... 新增更多聯絡人
+];
+
+// 修改預設訊息
+const generatedMessages = {
+  1: { // 聯絡人 ID
+    warm: "溫馨訊息內容...",
+    fun: "有趣訊息內容...",
+    formal: "正式訊息內容...",
+    short: "簡短訊息內容...",
+  },
+  // ... 為每個聯絡人設定訊息
+};
+```
+
+### 2. 首頁結構 (`Index.tsx`)
+
+首頁包含以下區塊（依序）：
+
+1. **Hero 區** - 主視覺、CTA 按鈕、互動式 Bubbo
+2. **App 預覽** - 3 張 App 截圖輪播
+3. **功能展示** - 聯絡人管理、生日提醒
+4. **🆕 AI 助手 Demo** - 互動式 AI 訊息生成展示
+5. **Bubbo 圖庫** - 吉祥物圖片展示
+6. **核心功能** - 3 大功能卡片
+7. **CTA 區** - 下載呼籲、QR Code
+
+### 3. 設計系統 (`index.css`)
+
+#### 品牌色彩：
+```css
+--bubly-sky: 195 100% 75%;      /* 天空藍 */
+--bubly-blue: 200 90% 70%;      /* 寶藍 */
+--bubly-violet: 262 83% 70%;    /* 紫羅蘭 */
+--bubly-pink: 320 80% 70%;      /* 粉紅 */
+```
+
+#### 常用工具類別：
+```css
+.gradient-text          /* 漸層文字 */
+.glass                  /* 玻璃擬態卡片 */
+.btn-premium            /* 漸層按鈕 */
+.animate-float-gentle   /* 輕柔漂浮動畫 */
+.bg-gradient-bubly      /* Bubly 品牌漸層 */
+```
+
+---
+
+## 🎯 常見開發任務
+
+### 更新 App Store 連結
+
+```typescript
+// src/pages/Index.tsx
+const APP_STORE_URL = "https://apps.apple.com/us/app/bubly-social-assistant/id6754884488";
+```
+
+### 新增 App 截圖
+
+1. 將圖片放到 `src/assets/`
+2. 在 `Index.tsx` 中 import：
+```typescript
+import newScreenshot from "@/assets/new-screenshot.png";
+```
+3. 加入到對應的區塊中使用
+
+### 修改 Bubbo 動畫
+
+Bubbo 的不同姿勢圖片：
+- `bubbo-wave.png` - 揮手
+- `bubbo-thinking.png` - 思考
+- `bubbo-point.png` - 指著你
+- `bubbo-sleepy.png` - 睡覺
+- `bubbo-no-idea.png` - 不知道
+
+使用方式：
+```typescript
+import bubboWave from "@/assets/bubbo-wave.png";
+
+<img src={bubboWave} alt="Bubbo waving" />
+```
+
+### 新增頁面
+
+1. 在 `src/pages/` 建立新頁面組件
+2. 在 `src/App.tsx` 加入路由：
+```typescript
+import NewPage from "./pages/NewPage";
+
+// 在 Routes 中加入
+<Route path="/new-page" element={<NewPage />} />
+```
+
+---
+
+## 🌐 部署
+
+### Vercel (推薦)
+```bash
+# 安裝 Vercel CLI
+npm i -g vercel
+
+# 部署
+vercel
+```
+
+### Netlify
+```bash
+# 建置
+npm run build
+
+# 上傳 dist/ 資料夾到 Netlify
+```
+
+### 自訂伺服器
+```bash
+npm run build
+# 將 dist/ 資料夾內容部署到任何靜態檔案伺服器
+```
+
+---
+
+## 🛠 技術堆疊
+
+- **框架**: React 18 + TypeScript
+- **建置工具**: Vite 5
+- **樣式**: Tailwind CSS 3
+- **UI 元件**: shadcn/ui
+- **動畫**: Framer Motion
+- **路由**: React Router v6
+- **圖示**: Lucide React
+- **字型**: Plus Jakarta Sans (Google Fonts)
+
+---
+
+## 📝 開發注意事項
+
+### 效能優化
+- 所有頁面都使用 lazy loading
+- 圖片已最佳化（建置時會自動壓縮）
+- 使用 ScrollReveal 延遲載入動畫
+
+### RWD 斷點
+```css
+sm:  640px   /* 手機橫向 */
+md:  768px   /* 平板 */
+lg:  1024px  /* 小筆電 */
+xl:  1280px  /* 桌面 */
+2xl: 1536px  /* 大螢幕 */
+```
+
+### 動畫效能
+- 優先使用 `transform` 和 `opacity`
+- 避免動畫化 `width`、`height`、`top`、`left`
+- 使用 `will-change` 提示瀏覽器
+
+### 無障礙設計
+- 所有互動元素都有適當的 ARIA 標籤
+- 鍵盤導航支援
+- 色彩對比度符合 WCAG AA 標準
+
+---
+
+## 🐛 疑難排解
+
+### 建置失敗
+```bash
+# 清除快取重新安裝
+rm -rf node_modules package-lock.json
+npm install
+npm run build
+```
+
+### 圖片無法顯示
+- 確認圖片路徑正確
+- 使用 `@/assets/` 或相對路徑 import
+- 檢查檔案名稱大小寫
+
+### 動畫不流暢
+- 檢查瀏覽器開發者工具的 Performance 面板
+- 減少同時執行的動畫數量
+- 考慮使用 `will-change` CSS 屬性
+
+---
+
+## 📞 聯絡資訊
+
+- **App Store**: https://apps.apple.com/us/app/bubly-social-assistant/id6754884488
+- **開發團隊**: 台灣 Bubly 團隊
+- **目標市場**: 美國用戶
+
+---
+
+## 📄 授權
+
+專有軟體 - 保留所有權利
+
+---
+
+## 🎉 更新日誌
+
+### v1.1.0 (2025-12-26)
+- ✨ 新增互動式 AI 助手 Demo
+- 🎨 優化 Bubbo 動畫效果
+- 📱 改善行動裝置體驗
+- 🐛 修復 CSS import 警告
+
+### v1.0.0 (2024)
+- 🎉 初版發布
+- 🏠 首頁設計完成
+- 📄 所有功能頁面上線

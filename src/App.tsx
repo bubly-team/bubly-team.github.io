@@ -43,7 +43,7 @@ const pageVariants = {
 
 // Loading fallback with animation
 const PageLoadingFallback = () => (
-  <AnimatePresence>
+  <>
     <TopProgressBar />
     <motion.div
       className="min-h-screen flex items-center justify-center"
@@ -109,7 +109,7 @@ const PageLoadingFallback = () => (
         </motion.p>
       </div>
     </motion.div>
-  </AnimatePresence>
+  </>
 );
 
 const AnimatedRoutes = () => {
