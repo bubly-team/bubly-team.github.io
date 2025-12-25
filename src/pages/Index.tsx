@@ -4,6 +4,7 @@ import { Bubbo } from "@/components/Bubbo";
 import { BubboGallery, FloatingBubbos } from "@/components/BubboGallery";
 import { HeroParticles, AmbientOrbs, GradientMesh } from "@/components/HeroParticles";
 import { GlassCard } from "@/components/GlassCard";
+import { ScrollReveal, StaggerReveal } from "@/hooks/use-scroll-reveal";
 import { Users, Sparkles, Bell, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -155,7 +156,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-bubly-violet/5 via-transparent to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 relative">
-          <div className="text-center mb-20">
+          <ScrollReveal className="text-center mb-20">
             <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
               App Preview
             </span>
@@ -165,42 +166,48 @@ const Index = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               A beautifully designed app that makes managing relationships feel natural
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Screenshots showcase */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-10 max-w-5xl mx-auto">
             {/* Left screenshot */}
-            <div className="w-full md:w-1/3 transition-all duration-700 hover:-translate-y-2 group md:mt-12">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/10 to-bubly-pink/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] border border-white/10 backdrop-blur-sm">
-                  <img src={screenshot6} alt="Event Calendar" className="w-full h-auto" />
+            <ScrollReveal delay={0} direction="up" className="w-full md:w-1/3 md:mt-12">
+              <div className="transition-all duration-700 hover:-translate-y-2 group">
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/10 to-bubly-pink/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] border border-white/10 backdrop-blur-sm">
+                    <img src={screenshot6} alt="Event Calendar" className="w-full h-auto" />
+                  </div>
                 </div>
+                <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">Event Calendar</p>
               </div>
-              <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">Event Calendar</p>
-            </div>
+            </ScrollReveal>
 
             {/* Center screenshot - featured */}
-            <div className="w-full md:w-1/3 transition-all duration-700 hover:-translate-y-3 group z-10 md:-mt-8">
-              <div className="relative">
-                <div className="absolute -inset-2 bg-gradient-to-br from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(167,139,250,0.4)] border border-primary/20 ring-1 ring-white/10">
-                  <img src={screenshot3} alt="Smart Dashboard" className="w-full h-auto" />
+            <ScrollReveal delay={150} direction="up" className="w-full md:w-1/3 z-10 md:-mt-8">
+              <div className="transition-all duration-700 hover:-translate-y-3 group">
+                <div className="relative">
+                  <div className="absolute -inset-2 bg-gradient-to-br from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="relative rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(167,139,250,0.4)] border border-primary/20 ring-1 ring-white/10">
+                    <img src={screenshot3} alt="Smart Dashboard" className="w-full h-auto" />
+                  </div>
                 </div>
+                <p className="text-center mt-5 text-sm font-semibold gradient-text">Smart Dashboard</p>
               </div>
-              <p className="text-center mt-5 text-sm font-semibold gradient-text">Smart Dashboard</p>
-            </div>
+            </ScrollReveal>
 
             {/* Right screenshot */}
-            <div className="w-full md:w-1/3 transition-all duration-700 hover:-translate-y-2 group md:mt-12">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-br from-bubly-pink/20 via-bubly-violet/10 to-bubly-sky/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] border border-white/10 backdrop-blur-sm">
-                  <img src={screenshot4} alt="AI Greetings" className="w-full h-auto" />
+            <ScrollReveal delay={300} direction="up" className="w-full md:w-1/3 md:mt-12">
+              <div className="transition-all duration-700 hover:-translate-y-2 group">
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-gradient-to-br from-bubly-pink/20 via-bubly-violet/10 to-bubly-sky/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] border border-white/10 backdrop-blur-sm">
+                    <img src={screenshot4} alt="AI Greetings" className="w-full h-auto" />
+                  </div>
                 </div>
+                <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">AI Greetings</p>
               </div>
-              <p className="text-center mt-5 text-sm font-medium text-muted-foreground/80 group-hover:text-foreground transition-colors duration-500">AI Greetings</p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -210,7 +217,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           {/* Feature 1: Contact Management */}
           <div className="flex flex-col lg:flex-row items-center gap-16 mb-32">
-            <div className="flex-1 text-center lg:text-left space-y-6">
+            <ScrollReveal direction="right" className="flex-1 text-center lg:text-left space-y-6">
               <span className="inline-block px-3 py-1 rounded-full bg-bubly-violet/10 text-bubly-violet text-xs font-medium tracking-wide">
                 Contact Details
               </span>
@@ -221,20 +228,20 @@ const Index = () => {
                 Keep track of hobbies, interests, and important milestones in one place. 
                 Add personal notes and never forget what matters to your friends.
               </p>
-            </div>
-            <div className="flex-1 flex justify-center">
+            </ScrollReveal>
+            <ScrollReveal direction="left" delay={200} className="flex-1 flex justify-center">
               <div className="relative group transition-all duration-700 hover:-translate-y-2">
                 <div className="absolute -inset-3 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/15 to-bubly-pink/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative max-w-[280px] rounded-[2rem] overflow-hidden shadow-[0_25px_70px_-20px_rgba(0,0,0,0.25)] border border-white/10">
                   <img src={screenshot5} alt="Contact Management" className="w-full h-auto" />
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Feature 2: Home Dashboard */}
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
-            <div className="flex-1 text-center lg:text-left space-y-6">
+            <ScrollReveal direction="left" className="flex-1 text-center lg:text-left space-y-6">
               <span className="inline-block px-3 py-1 rounded-full bg-bubly-pink/10 text-bubly-pink text-xs font-medium tracking-wide">
                 Your Universe
               </span>
@@ -245,15 +252,15 @@ const Index = () => {
                 Your universe of friends at a glance. Track birthdays, anniversaries, 
                 and special moments with an intelligent calendar that keeps you connected.
               </p>
-            </div>
-            <div className="flex-1 flex justify-center">
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={200} className="flex-1 flex justify-center">
               <div className="relative group transition-all duration-700 hover:-translate-y-2">
                 <div className="absolute -inset-3 bg-gradient-to-br from-bubly-pink/20 via-bubly-violet/15 to-bubly-sky/20 rounded-[2.5rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative max-w-[280px] rounded-[2rem] overflow-hidden shadow-[0_25px_70px_-20px_rgba(0,0,0,0.25)] border border-white/10">
                   <img src={screenshot1} alt="Home Dashboard" className="w-full h-auto" />
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -266,31 +273,32 @@ const Index = () => {
       {/* Features Preview Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="gradient-text">Core Features</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Bubly combines AI technology with thoughtful design to make relationship management effortless
             </p>
-          </div>
+          </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
+          <StaggerReveal 
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            staggerDelay={150}
+            direction="scale"
+          >
+            {features.map((feature) => (
               <GlassCard key={feature.title} className="text-center group">
-                <div 
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-bubly mb-6 transition-all duration-500 group-hover:scale-105"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-bubly mb-6 transition-all duration-500 group-hover:scale-105">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </GlassCard>
             ))}
-          </div>
+          </StaggerReveal>
           
-          <div className="text-center mt-12">
+          <ScrollReveal delay={400} className="text-center mt-12">
             <Link
               to="/features"
               className="inline-flex items-center gap-2 text-primary font-medium transition-all duration-300 hover:gap-3"
@@ -298,30 +306,32 @@ const Index = () => {
               Explore All Features
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <GlassCard className="glass-strong text-center py-16 px-8">
-            <Bubbo size="lg" className="mx-auto mb-8" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Start Using <span className="gradient-text">Bubly</span>
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Download now and let Bubbo help you maintain every precious relationship in your life.
-            </p>
-            <a
-              href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-bubly text-white font-semibold transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-lg"
-            >
-              Free Download
-            </a>
-          </GlassCard>
+          <ScrollReveal direction="scale">
+            <GlassCard className="glass-strong text-center py-16 px-8">
+              <Bubbo size="lg" className="mx-auto mb-8" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Start Using <span className="gradient-text">Bubly</span>
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+                Download now and let Bubbo help you maintain every precious relationship in your life.
+              </p>
+              <a
+                href="https://apps.apple.com/app/bubly-social-assistant/id6754884488"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-bubly text-white font-semibold transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-lg"
+              >
+                Free Download
+              </a>
+            </GlassCard>
+          </ScrollReveal>
         </div>
       </section>
     </Layout>
