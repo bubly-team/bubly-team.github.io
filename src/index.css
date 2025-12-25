@@ -135,11 +135,9 @@
     background: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)), hsl(var(--bubly-pink)));
   }
 
-  /* Premium Gradient Button */
+  /* Premium Gradient Button - static (for nav) */
   .bg-gradient-bubly {
     background: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)) 50%, hsl(var(--bubly-pink)));
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease infinite;
   }
 
   /* Premium Button Styles */
