@@ -2,95 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Bubly Design System - Glassmorphism Theme */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Bubly Brand Colors - Blue to Purple Gradient */
+    --bubly-sky: 195 100% 75%;
+    --bubly-blue: 200 90% 70%;
+    --bubly-violet: 262 83% 70%;
+    --bubly-pink: 320 80% 70%;
+    
+    /* Background - Light with gradient capability */
+    --background: 240 20% 98%;
+    --foreground: 240 10% 15%;
 
+    /* Glass Card */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Bubly Blue */
+    --primary: 200 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft violet */
+    --secondary: 262 60% 95%;
+    --secondary-foreground: 262 83% 40%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted */
+    --muted: 240 10% 94%;
+    --muted-foreground: 240 5% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Pink */
+    --accent: 320 80% 95%;
+    --accent-foreground: 320 80% 40%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 200 90% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Glass effect values */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-blur: 20px;
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 30px hsl(262 83% 70% / 0.1);
+    --shadow-glow: 0 0 40px hsl(200 90% 70% / 0.3);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 240 15% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 15% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 15% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 200 90% 60%;
+    --primary-foreground: 240 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 262 40% 20%;
+    --secondary-foreground: 262 83% 80%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 5% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 320 50% 20%;
+    --accent-foreground: 320 80% 80%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 200 90% 60%;
+
+    --glass-bg: 240 15% 12% / 0.8;
+    --glass-border: 0 0% 100% / 0.1;
   }
 }
 
@@ -99,7 +98,166 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass {
+    @apply backdrop-blur-xl border border-white/20 shadow-lg;
+    background: hsl(var(--glass-bg));
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl border border-white/30 shadow-xl;
+    background: hsl(0 0% 100% / 0.85);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)), hsl(var(--bubly-pink)));
+  }
+
+  /* Gradient Background */
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--bubly-sky) / 0.3), hsl(var(--bubly-violet) / 0.2), hsl(var(--bubly-pink) / 0.15));
+  }
+
+  .gradient-bg-vivid {
+    background: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)), hsl(var(--bubly-pink)));
+  }
+
+  /* Bubble decorations */
+  .bubble {
+    @apply absolute rounded-full opacity-60;
+    background: linear-gradient(135deg, hsl(var(--bubly-sky) / 0.5), hsl(var(--bubly-violet) / 0.3));
+    filter: blur(1px);
+  }
+
+  /* Floating animation for Bubbo */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .float-slow {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .float-delayed {
+    animation: float 3s ease-in-out infinite 0.5s;
+  }
+
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  /* Wobble on hover */
+  .hover-wobble:hover {
+    animation: wobble 0.5s ease-in-out;
+  }
+
+  /* Scale on hover */
+  .hover-scale {
+    @apply transition-transform duration-300;
+  }
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Link underline animation */
+  .link-underline {
+    @apply relative;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 scale-x-0 origin-right transition-transform duration-300;
+    background: linear-gradient(90deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)));
+  }
+  .link-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+@layer utilities {
+  /* Mesh gradient background */
+  .mesh-gradient {
+    background-color: hsl(var(--background));
+    background-image: 
+      radial-gradient(at 40% 20%, hsl(var(--bubly-sky) / 0.25) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(var(--bubly-violet) / 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsl(var(--bubly-pink) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, hsl(var(--bubly-blue) / 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsl(var(--bubly-violet) / 0.15) 0px, transparent 50%);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px hsl(var(--bubly-violet) / 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px hsl(var(--bubly-violet) / 0.6));
+  }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bubbleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
   }
 }
