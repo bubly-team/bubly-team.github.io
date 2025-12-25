@@ -135,6 +135,50 @@
     background: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)), hsl(var(--bubly-pink)));
   }
 
+  /* Premium Gradient Button */
+  .bg-gradient-bubly {
+    background: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)) 50%, hsl(var(--bubly-pink)));
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  /* Premium Button Styles */
+  .btn-premium {
+    @apply relative overflow-hidden rounded-2xl font-semibold transition-all duration-500;
+    background: linear-gradient(135deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)) 50%, hsl(var(--bubly-pink)));
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+  }
+  .btn-premium::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, hsl(var(--bubly-violet)), hsl(var(--bubly-pink)) 50%, hsl(var(--bubly-sky)));
+    background-size: 200% 200%;
+  }
+  .btn-premium:hover::before {
+    @apply opacity-100;
+  }
+  .btn-premium::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, transparent 50%, transparent 100%);
+  }
+  .btn-premium:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Glass Button */
+  .btn-glass {
+    @apply backdrop-blur-xl border border-white/20 rounded-2xl font-semibold transition-all duration-500;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px -15px rgba(167, 139, 250, 0.3);
+  }
+
   /* Bubble decorations */
   .bubble {
     @apply absolute rounded-full opacity-60;
@@ -263,5 +307,18 @@
   50% {
     transform: translateY(-15px);
     opacity: 0.6;
+  }
+}
+
+/* Gradient shift animation for buttons */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
