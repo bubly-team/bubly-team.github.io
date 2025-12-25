@@ -5,8 +5,17 @@ import { HeroParticles, AmbientOrbs, GradientMesh } from "@/components/HeroParti
 import { GlassCard } from "@/components/GlassCard";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { FollowCursorBubbo, InteractiveBubbo } from "@/components/InteractiveBubbo";
+import { ChristmasFollowBubbo, Snowfall, ChristmasBanner, ChristmasBubboGallery } from "@/components/ChristmasBubbo";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Check if it's Christmas season (Dec 20 - Jan 5)
+const isChristmasSeason = () => {
+  const now = new Date();
+  const month = now.getMonth();
+  const day = now.getDate();
+  return (month === 11 && day >= 20) || (month === 0 && day <= 5);
+};
 
 // App screenshots
 import screenshot1 from "@/assets/app-screenshot-1.png";
@@ -57,8 +66,18 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isChristmas = isChristmasSeason();
+
   return (
     <Layout>
+      {/* Christmas effects */}
+      {isChristmas && (
+        <>
+          <Snowfall />
+          <ChristmasBanner />
+        </>
+      )}
+
       {/* Hero Section - Immersive */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Layered backgrounds */}
@@ -136,8 +155,8 @@ const Index = () => {
                 <div className="absolute inset-0 -m-24 rounded-full border border-bubly-violet/8 animate-spin-slow" style={{ animationDuration: "35s", animationDirection: "reverse" }} />
                 <div className="absolute inset-0 -m-32 rounded-full border border-bubly-pink/5 animate-spin-slow" style={{ animationDuration: "45s" }} />
                 
-                {/* Interactive Bubbo that follows cursor */}
-                <FollowCursorBubbo size="xl" />
+                {/* Interactive Bubbo - Christmas or regular based on season */}
+                {isChristmas ? <ChristmasFollowBubbo size="xl" /> : <FollowCursorBubbo size="xl" />}
                 
                 {/* Floating accent dots */}
                 <div className="absolute -top-4 -right-4 w-3 h-3 rounded-full bg-bubly-sky/60 animate-drift" />
@@ -280,7 +299,26 @@ const Index = () => {
 
       {/* Bubbo Gallery Section */}
       <section className="py-24 overflow-hidden relative">
-        <BubboGallery />
+        {isChristmas ? (
+          <div className="container mx-auto px-4">
+            <ScrollReveal className="text-center mb-12">
+              <span className="inline-block px-4 py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-4 tracking-wide uppercase">
+                🎄 Holiday Special 🎄
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-red-400 via-green-400 to-red-400 bg-clip-text text-transparent">Christmas Bubbo</span> Collection
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Celebrate the holiday season with our festive Bubbo friends!
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <ChristmasBubboGallery />
+            </ScrollReveal>
+          </div>
+        ) : (
+          <BubboGallery />
+        )}
       </section>
 
       {/* Core Features Section - Premium Design */}
