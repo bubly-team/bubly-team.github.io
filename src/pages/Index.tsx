@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { Bubbo } from "@/components/Bubbo";
 import { GlassCard } from "@/components/GlassCard";
+import { PhoneMockup, ContactsScreen, GreetingScreen, RemindersScreen } from "@/components/PhoneMockup";
 import { Users, Sparkles, Bell, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -78,6 +79,47 @@ const Index = () => {
                 
                 <Bubbo size="xl" className="animate-float-gentle" />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* App Preview Section */}
+      <section className="py-20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              See <span className="gradient-text">Bubly</span> in Action
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A beautifully designed app that makes managing relationships feel natural
+            </p>
+          </div>
+
+          {/* Phone mockups */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-4">
+            {/* Left phone - slightly behind */}
+            <div className="lg:-mr-8 lg:opacity-80 lg:scale-90 transition-all duration-500 hover:opacity-100 hover:scale-95">
+              <PhoneMockup>
+                <ContactsScreen />
+              </PhoneMockup>
+              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">Contact Management</p>
+            </div>
+
+            {/* Center phone - main focus */}
+            <div className="relative z-10 lg:scale-100">
+              <PhoneMockup>
+                <GreetingScreen />
+              </PhoneMockup>
+              <p className="text-center mt-6 text-sm font-medium gradient-text">AI Greetings</p>
+            </div>
+
+            {/* Right phone - slightly behind */}
+            <div className="lg:-ml-8 lg:opacity-80 lg:scale-90 transition-all duration-500 hover:opacity-100 hover:scale-95">
+              <PhoneMockup>
+                <RemindersScreen />
+              </PhoneMockup>
+              <p className="text-center mt-6 text-sm font-medium text-muted-foreground">Smart Reminders</p>
             </div>
           </div>
         </div>
