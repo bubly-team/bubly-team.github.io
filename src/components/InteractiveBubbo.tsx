@@ -303,11 +303,9 @@ interface FollowCursorBubboProps {
 
 export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorBubboProps) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate offset from center of viewport
       const x = (e.clientX - window.innerWidth / 2) / 50;
       const y = (e.clientY - window.innerHeight / 2) / 50;
       setMousePosition({ x, y });
@@ -327,14 +325,23 @@ export const FollowCursorBubbo = ({ className = "", size = "lg" }: FollowCursorB
         rotateX: -mousePosition.y * 2,
       }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Soft ambient glow */}
       <div className="absolute inset-0 -m-8 bg-gradient-radial from-bubly-violet/25 via-bubly-pink/15 to-transparent blur-3xl animate-breathe" />
-      <img
-        src={isHovered ? bubboWave : bubboDefault}
+      
+      {/* Bubbo with gentle floating animation */}
+      <motion.img
+        src={bubboDefault}
         alt="Bubbo"
-        className={`${sizeClasses[size]} object-contain drop-shadow-[0_30px_60px_rgba(167,139,250,0.4)] transition-all duration-300`}
+        className={`${sizeClasses[size]} object-contain drop-shadow-[0_30px_60px_rgba(167,139,250,0.4)]`}
+        animate={{ 
+          y: [0, -8, 0],
+        }}
+        transition={{ 
+          duration: 4, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
       />
     </motion.div>
   );
