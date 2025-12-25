@@ -3,6 +3,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { FloatingBubbo } from "./Bubbo";
 import { BubbleBackground } from "./BubbleBackground";
+import { ScrollToTop } from "./ScrollToTop";
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ export const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
