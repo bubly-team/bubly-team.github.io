@@ -367,6 +367,16 @@ npm run build
 
 ## 🎉 更新日誌
 
+### v1.2.1 (2025-12-26)
+- 🎨 **Features 頁面 Additional Features 區塊全新設計**
+  - 採用現代化 **Bento Grid** 非對稱佈局
+  - 新增流動漸變邊框動畫 (`background-animate`)
+  - 加入 Spotlight 跟隨效果與 Glass Morphism
+  - 數字徽章 (01-06) 引導視覺層次
+  - 功能標籤如「CORE FEATURE」、「SECURE」增強資訊傳達
+  - Privacy First 卡片新增安全指標清單
+- 📱 優化手機版佈局為簡潔單列堆疊
+
 ### v1.2.0 (2025-12-26)
 - 🚀 設定 GitHub Pages 自動部署
 - 🎨 更新網站 Logo 為官方 Bubbo Avatar
