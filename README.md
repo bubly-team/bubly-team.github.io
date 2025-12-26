@@ -1,278 +1,179 @@
-# Bubly - AI Social Assistant 官方網站
+# 🫧 Bubly - Official Website
 
-> Bubly App 的官方介紹網站，展示 AI 智能社交助理功能
->
-> **目標市場**: 美國用戶
-> **開發團隊**: 台灣團隊
+<p align="center">
+  <img src="src/assets/bubbo-logo.png" alt="Bubly Logo" width="120" />
+</p>
 
----
+<p align="center">
+  <strong>The Official Website for Bubly - Your AI-Powered Social Assistant</strong>
+</p>
 
-## 📱 專案簡介
-
-這是 [Bubly App](https://apps.apple.com/us/app/bubly-social-assistant/id6754884488) 的官方網站，用於展示 App 的核心功能：
-- 智能聯絡人管理
-- AI 個性化祝福生成
-- 重要日期提醒
-- 互動式 Demo 展示
-
-### 🎨 設計風格
-- Glassmorphism（玻璃擬態）設計
-- 漸層色系：Sky Blue → Violet → Pink
-- 吉祥物 Bubbo 互動動畫
-- 響應式設計（支援手機/平板/桌面）
+<p align="center">
+  <a href="https://apps.apple.com/us/app/bubly-social-assistant/id6754884488">
+    <img src="https://img.shields.io/badge/Download-App%20Store-blue?style=for-the-badge&logo=apple&logoColor=white" alt="App Store" />
+  </a>
+  <img src="https://img.shields.io/badge/Platform-iOS-lightgrey?style=for-the-badge&logo=ios" alt="iOS" />
+  <img src="https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge" alt="License" />
+</p>
 
 ---
 
-## 🚀 快速開始
+## 📱 About Bubly
 
-### 環境需求
-- Node.js 16+ (建議使用 [nvm](https://github.com/nvm-sh/nvm) 安裝)
-- npm 或 yarn
+**Bubly** is an intelligent social relationship management app that helps you nurture meaningful connections. Never forget another birthday, anniversary, or special moment again.
 
-### 安裝步驟
+### ✨ Key Features
+- 🧠 **AI-Powered Greetings** - Generate personalized messages for any occasion
+- 📅 **Smart Reminders** - Never miss important dates
+- 👥 **Contact Management** - Organize relationships with custom categories
+- 🔒 **Privacy-First** - Your data stays on your device
+
+---
+
+## 🌐 Website Overview
+
+This repository contains the official Bubly website, showcasing the app's features with:
+
+- **Interactive AI Demo** - Try the AI greeting generator
+- **Feature Showcase** - Explore all capabilities
+- **Team Introduction** - Meet the Development Squad
+- **Modern Design** - Glassmorphism with smooth animations
+
+### 🎨 Design System
+| Element        | Style                                           |
+| -------------- | ----------------------------------------------- |
+| **Colors**     | Sky Blue → Violet → Pink gradient               |
+| **Effects**    | Glassmorphism, 3D parallax, particle animations |
+| **Mascot**     | Bubbo - Interactive animated character          |
+| **Typography** | Plus Jakarta Sans                               |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ (LTS recommended)
+- npm or yarn
+
+### Installation
 
 ```bash
-# 1. Clone 專案
+# Clone the repository
 git clone https://github.com/your-org/bubbo-s-world.git
 cd bubbo-s-world
 
-# 2. 安裝相依套件
+# Install dependencies
 npm install
 
-# 3. 啟動開發伺服器
+# Start development server
 npm run dev
 ```
 
-開發伺服器會在 `http://localhost:8080` 啟動
+The dev server runs at `http://localhost:8080`
 
-### 建置生產版本
+### Build for Production
 
 ```bash
-# 建置專案
+# Build
 npm run build
 
-# 預覽建置結果
+# Preview build
 npm run preview
 ```
 
-建置檔案會輸出到 `dist/` 資料夾
+Output: `dist/` folder
 
 ---
 
-## 📁 專案結構
+## 📁 Project Structure
 
 ```
 bubbo-s-world/
 ├── src/
-│   ├── assets/              # 圖片素材
-│   │   ├── app-screenshot-*.png   # App 截圖
-│   │   ├── bubbo-*.png           # Bubbo 吉祥物圖片
-│   │   └── app-qrcode.png        # App Store QR Code
-│   ├── components/          # React 元件
-│   │   ├── AIAssistantDemo.tsx   # ⭐ AI 助手互動 Demo
-│   │   ├── BubboGallery.tsx      # Bubbo 圖庫
-│   │   ├── InteractiveBubbo.tsx  # 互動式 Bubbo
-│   │   ├── PageLoader.tsx        # 🆕 Bubbo Loading 動畫
-│   │   ├── Layout.tsx            # 頁面版型
-│   │   ├── Navbar.tsx            # 導覽列
-│   │   └── ui/                   # shadcn-ui 元件
-│   ├── pages/               # 頁面
-│   │   ├── Index.tsx        # 首頁 ⭐
-│   │   ├── Features.tsx     # 功能介紹
-│   │   ├── About.tsx        # 關於我們
-│   │   ├── Contact.tsx      # 聯絡我們
-│   │   ├── Privacy.tsx      # 隱私政策
-│   │   └── Terms.tsx        # 服務條款
-│   ├── hooks/               # 自訂 Hooks
-│   ├── lib/                 # 工具函式
-│   ├── App.tsx              # 主要 App 元件
-│   ├── index.css            # 全域樣式
-│   └── main.tsx             # 進入點
-├── assets/                  # 原始設計素材
-│   ├── Bubbo Pose/         # Bubbo 姿勢圖
-│   ├── Bubbo Christmas Vibe/ # 聖誕主題 Bubbo
-│   └── Bubbo Avatar/       # Bubbo 頭像
-├── public/                  # 靜態檔案
+│   ├── assets/                    # Images & media
+│   │   ├── app-screenshot-*.png   # App screenshots
+│   │   ├── bubbo-*.png            # Bubbo mascot variants
+│   │   └── app-qrcode.png         # App Store QR code
+│   │
+│   ├── components/                # React components
+│   │   ├── AIAssistantDemo.tsx    # Interactive AI demo
+│   │   ├── TeamSection.tsx        # Development Squad showcase
+│   │   ├── TestimonialsSection.tsx # Featured feedback
+│   │   ├── GettingStarted.tsx     # Onboarding guide
+│   │   ├── BubboGallery.tsx       # Mascot gallery
+│   │   ├── InteractiveBubbo.tsx   # Animated mascot
+│   │   ├── PageLoader.tsx         # Loading animation
+│   │   ├── Layout.tsx             # Page layout
+│   │   ├── Navbar.tsx             # Navigation
+│   │   └── ui/                    # shadcn/ui components
+│   │
+│   ├── pages/                     # Route pages
+│   │   ├── Index.tsx              # Homepage
+│   │   ├── Features.tsx           # Features showcase
+│   │   ├── About.tsx              # About us + Team
+│   │   ├── Contact.tsx            # Contact form
+│   │   ├── Privacy.tsx            # Privacy Policy
+│   │   └── Terms.tsx              # Terms of Service
+│   │
+│   ├── hooks/                     # Custom React hooks
+│   ├── lib/                       # Utilities
+│   ├── App.tsx                    # Root component
+│   ├── index.css                  # Global styles
+│   └── main.tsx                   # Entry point
+│
+├── public/                        # Static files
+├── .github/workflows/             # CI/CD (GitHub Pages)
 └── package.json
 ```
 
 ---
 
-## ✨ 核心功能說明
+## 🛠 Tech Stack
 
-### 1. AI 助手互動 Demo (`AIAssistantDemo.tsx`)
-
-**這是最新加入的核心功能！**
-
-位置：首頁的「Experience the AI Magic」區塊
-
-#### 功能流程：
-1. **選擇聯絡人** - 用戶選擇要發送訊息的對象（Megan/Alex/Sarah）
-2. **選擇氛圍** - 選擇訊息風格（溫馨/有趣/正式/簡短）
-3. **生成訊息** - Bubbo 思考動畫 + 打字機效果展示訊息
-4. **互動選項** - 複製訊息、換氛圍、重新開始
-
-#### 技術特點：
-- 使用 Framer Motion 製作流暢動畫
-- 3 步驟進度指示器
-- 預先設定的 12 組訊息（3 聯絡人 × 4 氛圍）
-- 完整的 RWD 響應式設計
-- 複製到剪貼簿功能
-
-#### 如何修改 Demo 內容：
-
-```typescript
-// 在 src/components/AIAssistantDemo.tsx 中
-
-// 修改聯絡人資料
-const mockContacts = [
-  {
-    id: 1,
-    name: "姓名",
-    relationship: "關係",
-    avatar: "🎨", // emoji 圖示
-    interests: "興趣愛好",
-    occasion: "場合",
-    color: "漸層色", // Tailwind 類別
-  },
-  // ... 新增更多聯絡人
-];
-
-// 修改預設訊息
-const generatedMessages = {
-  1: { // 聯絡人 ID
-    warm: "溫馨訊息內容...",
-    fun: "有趣訊息內容...",
-    formal: "正式訊息內容...",
-    short: "簡短訊息內容...",
-  },
-  // ... 為每個聯絡人設定訊息
-};
-```
-
-### 2. 首頁結構 (`Index.tsx`)
-
-首頁包含以下區塊（依序）：
-
-1. **Hero 區** - 主視覺、CTA 按鈕、互動式 Bubbo
-2. **App 預覽** - 3 張 App 截圖輪播
-3. **功能展示** - 聯絡人管理、生日提醒
-4. **🆕 AI 助手 Demo** - 互動式 AI 訊息生成展示
-5. **Bubbo 圖庫** - 吉祥物圖片展示
-6. **核心功能** - 3 大功能卡片
-7. **CTA 區** - 下載呼籲、QR Code
-
-### 3. 設計系統 (`index.css`)
-
-#### 品牌色彩：
-```css
---bubly-sky: 195 100% 75%;      /* 天空藍 */
---bubly-blue: 200 90% 70%;      /* 寶藍 */
---bubly-violet: 262 83% 70%;    /* 紫羅蘭 */
---bubly-pink: 320 80% 70%;      /* 粉紅 */
-```
-
-#### 常用工具類別：
-```css
-.gradient-text          /* 漸層文字 */
-.glass                  /* 玻璃擬態卡片 */
-.btn-premium            /* 漸層按鈕 */
-.animate-float-gentle   /* 輕柔漂浮動畫 */
-.bg-gradient-bubly      /* Bubly 品牌漸層 */
-```
+| Category          | Technology                |
+| ----------------- | ------------------------- |
+| **Framework**     | React 18 + TypeScript     |
+| **Build Tool**    | Vite 7                    |
+| **Styling**       | Tailwind CSS 3            |
+| **UI Components** | shadcn/ui (Radix UI)      |
+| **Animations**    | Framer Motion             |
+| **Routing**       | React Router v6           |
+| **Icons**         | Lucide React              |
+| **Deployment**    | GitHub Pages (Auto CI/CD) |
 
 ---
 
-## 🎯 常見開發任務
+## 👥 Development Squad
 
-### 更新 App Store 連結
-
-```typescript
-// src/pages/Index.tsx
-const APP_STORE_URL = "https://apps.apple.com/us/app/bubly-social-assistant/id6754884488";
-```
-
-### 新增 App 截圖
-
-1. 將圖片放到 `src/assets/`
-2. 在 `Index.tsx` 中 import：
-```typescript
-import newScreenshot from "@/assets/new-screenshot.png";
-```
-3. 加入到對應的區塊中使用
-
-### 修改 Bubbo 動畫
-
-Bubbo 的不同姿勢圖片：
-- `bubbo.png` / `bubbo-logo.png` - 預設姿勢
-- `bubbo-wave.png` - 揮手
-- `bubbo-thinking.png` - 思考中
-- `bubbo-point.png` - 指著你
-- `bubbo-loading.png` / `bubbo-sleepy.png` - 睡覺（用於 Loading）
-- `bubbo-curious.png` - 好奇
-- `bubbo-no-idea.png` - 不知道
-- `bubbo-cool.png` - 酷炫墨鏡
-- `bubbo-music.png` - 音樂 DJ
-- `bubbo-artist.png` - 藝術家
-- `bubbo-professor.png` - 教授
-- `bubbo-sport.png` - 運動
-- `bubbo-business.png` - 商務
-- `bubbo-vr.png` - VR 科技
-- `bubbo-sprout.png` - 發芽新萌
-- `bubbo-xmas-*.png` - 聖誕系列（deer/gift/santa/socks/tree）
-
-使用方式：
-```typescript
-import bubboWave from "@/assets/bubbo-wave.png";
-
-<img src={bubboWave} alt="Bubbo waving" />
-```
-
-### 新增頁面
-
-1. 在 `src/pages/` 建立新頁面組件
-2. 在 `src/App.tsx` 加入路由：
-```typescript
-import NewPage from "./pages/NewPage";
-
-// 在 Routes 中加入
-<Route path="/new-page" element={<NewPage />} />
-```
+| Name           | Role            | Focus                          |
+| -------------- | --------------- | ------------------------------ |
+| **Rebecca**    | Product Owner   | Product Vision & Strategy      |
+| **Max**        | Project Manager | Sprint Planning & Automation   |
+| **Lulalabana** | Lead Developer  | System Architecture & Core Dev |
+| **Finn**       | UI/UX Designer  | Interface & Experience Design  |
 
 ---
 
-## 🌐 部署
+## 🌐 Deployment
 
-本專案已設定 **GitHub Pages 自動部署**。
+### GitHub Pages (Default)
 
-### GitHub Pages 部署（推薦）
-
-每次推送到 `main` 分支時，會自動觸發部署：
+Automatic deployment on push to `main`:
 
 ```bash
 git add .
-git commit -m "你的更新訊息"
+git commit -m "Your update message"
 git push origin main
-
-# 2-3 分鐘後，更新會自動上線
+# Deploys automatically in 2-3 minutes
 ```
 
-**網站 URL**: `https://your-username.github.io/bubbo-s-world/`
-
-📖 詳細設定步驟請參考：
-- [QUICK_DEPLOY_GUIDE.md](./QUICK_DEPLOY_GUIDE.md) - 5 分鐘快速指南
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - 完整部署文件
-
-### 其他部署選項
+### Other Options
 
 <details>
 <summary>Vercel</summary>
 
 ```bash
-# 安裝 Vercel CLI
 npm i -g vercel
-
-# 部署
 vercel
 ```
 </details>
@@ -281,147 +182,112 @@ vercel
 <summary>Netlify</summary>
 
 ```bash
-# 建置
 npm run build
-
-# 上傳 dist/ 資料夾到 Netlify
-```
-</details>
-
-<details>
-<summary>自訂伺服器</summary>
-
-```bash
-npm run build
-# 將 dist/ 資料夾內容部署到任何靜態檔案伺服器
+# Upload dist/ to Netlify
 ```
 </details>
 
 ---
 
-## 🛠 技術堆疊
+## 📋 Available Scripts
 
-- **框架**: React 18 + TypeScript
-- **建置工具**: Vite 7
-- **樣式**: Tailwind CSS 3
-- **UI 元件**: shadcn/ui (Radix UI)
-- **動畫**: Framer Motion
-- **路由**: React Router v6
-- **圖示**: Lucide React
-- **字型**: Plus Jakarta Sans (Google Fonts)
-- **部署**: GitHub Pages (自動化 CI/CD)
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint               |
 
 ---
 
-## 📝 開發注意事項
+## 🎨 Bubbo Mascot Variants
 
-### 效能優化
-- 所有頁面都使用 lazy loading
-- 圖片已最佳化（建置時會自動壓縮）
-- 使用 ScrollReveal 延遲載入動畫
-
-### RWD 斷點
-```css
-sm:  640px   /* 手機橫向 */
-md:  768px   /* 平板 */
-lg:  1024px  /* 小筆電 */
-xl:  1280px  /* 桌面 */
-2xl: 1536px  /* 大螢幕 */
-```
-
-### 動畫效能
-- 優先使用 `transform` 和 `opacity`
-- 避免動畫化 `width`、`height`、`top`、`left`
-- 使用 `will-change` 提示瀏覽器
-
-### 無障礙設計
-- 所有互動元素都有適當的 ARIA 標籤
-- 鍵盤導航支援
-- 色彩對比度符合 WCAG AA 標準
+| Pose                 | Usage                    |
+| -------------------- | ------------------------ |
+| `bubbo-logo.png`     | Default pose             |
+| `bubbo-wave.png`     | Greeting animations      |
+| `bubbo-thinking.png` | Loading states           |
+| `bubbo-artist.png`   | Designer representation  |
+| `bubbo-business.png` | PM representation        |
+| `bubbo-vr.png`       | Developer representation |
+| `bubbo-cool.png`     | Fun moments              |
+| `bubbo-xmas-*.png`   | Holiday themes           |
 
 ---
 
-## 🐛 疑難排解
+## 📞 Links
 
-### 建置失敗
-```bash
-# 清除快取重新安裝
-rm -rf node_modules package-lock.json
-npm install
-npm run build
-```
-
-### 圖片無法顯示
-- 確認圖片路徑正確
-- 使用 `@/assets/` 或相對路徑 import
-- 檢查檔案名稱大小寫
-
-### 動畫不流暢
-- 檢查瀏覽器開發者工具的 Performance 面板
-- 減少同時執行的動畫數量
-- 考慮使用 `will-change` CSS 屬性
+- **App Store**: [Download Bubly](https://apps.apple.com/us/app/bubly-social-assistant/id6754884488)
+- **Website**: Coming soon
+- **Support**: Contact form on website
 
 ---
 
-## 📞 聯絡資訊
+## 📄 License
 
-- **App Store**: https://apps.apple.com/us/app/bubly-social-assistant/id6754884488
-- **開發團隊**: 台灣 Bubly 團隊
-- **目標市場**: 美國用戶
+Proprietary Software - All Rights Reserved © 2025 Bubly Team
 
 ---
 
-## 📄 授權
+## 📝 Changelog
 
-專有軟體 - 保留所有權利
+### v1.3.0 (2025-12-26) 🎉 **Production Release**
+
+#### ✨ New Features
+- **🎮 Development Squad Section** - Esports-style team showcase
+  - Hero player cards with 3D parallax
+  - RPG-style stats (Strategy, Coding, Design, etc.)
+  - Floating idle animations & particle effects
+  - Holographic card shine effect
+  - Team stats aggregation bar
+
+- **📜 Legal Pages Redesign** - Privacy Policy & Terms of Service
+  - Updated to December 2025
+  - Professional icon-based sections
+  - Quick summary banners
+  - GDPR/CCPA compliant language
+  - Branded visual design
+
+#### 🔧 Improvements
+- Enhanced page load animations
+- Smoother scroll-to-top on navigation
+- Optimized mobile responsiveness
 
 ---
 
-## 🎉 更新日誌
+### v1.2.3 (2025-12-26)
+- 💬 Featured Feedback section with star ratings
+- 🚀 Getting Started 3-step guide
+- 🔧 Navigation scroll fix
 
 ### v1.2.2 (2025-12-26)
-- 🎨 **Hero Section 手機版大幅優化**
-  - 新增專屬手機版 Bubbo 區塊，進入頁面即可看到吉祥物
-  - 文字內容緊湊化，確保首屏顯示完整
-  - 調整響應式間距與字體大小
-- ✨ **Loading 動畫全新設計**
-  - Bubbo 姿態輪播（loading → curious → wave → thinking）
-  - 可愛的載入訊息輪播動畫
-  - 動態背景光球與閃爍粒子效果
-  - 浮動 emoji 裝飾（✨💝🌟）
-- 📱 **Contact 頁面簡化**
-  - 移除 email 聯繫方式，僅保留 Tally 回饋表單
-  - 精簡側邊欄，專注於回饋表單體驗
-- 🔧 **About 頁面 Meet the Bubbos 修復**
-  - 修正手機版 Bubbo 圖片過大問題
-  - 使用標準 Tailwind 尺寸類別
-  - 新增卡片樣式與光暈效果
+- 🎨 Hero Section mobile optimization
+- ✨ New Bubbo loading animation
+- 📱 Contact page simplification
+- 🔧 About page Bubbo sizing fix
 
 ### v1.2.1 (2025-12-26)
-- 🎨 **Features 頁面 Additional Features 區塊全新設計**
-  - 採用現代化 **Bento Grid** 非對稱佈局
-  - 新增流動漸變邊框動畫 (`background-animate`)
-  - 加入 Spotlight 跟隨效果與 Glass Morphism
-  - 數字徽章 (01-06) 引導視覺層次
-  - 功能標籤如「CORE FEATURE」、「SECURE」增強資訊傳達
-  - Privacy First 卡片新增安全指標清單
-- 📱 優化手機版佈局為簡潔單列堆疊
+- 🎨 Features page Bento Grid redesign
+- ✨ Animated gradient borders
+- 📱 Mobile layout improvements
 
 ### v1.2.0 (2025-12-26)
-- 🚀 設定 GitHub Pages 自動部署
-- 🎨 更新網站 Logo 為官方 Bubbo Avatar
-- 🧹 移除所有第三方品牌元素
-- ⚡ 升級至 Vite 7
-- 📝 新增完整部署文件
+- 🚀 GitHub Pages auto-deployment
+- 🎨 Official Bubbo Avatar logo
+- ⚡ Vite 7 upgrade
 
 ### v1.1.0 (2025-12-26)
-- ✨ 新增互動式 AI 助手 Demo
-- 🎨 優化 Bubbo 動畫效果
-- 📱 改善行動裝置體驗
-- 🐛 修復 React key 警告與 CSS import 警告
+- ✨ Interactive AI Assistant Demo
+- 🎨 Enhanced Bubbo animations
+- 📱 Mobile experience improvements
 
 ### v1.0.0 (2024)
-- 🎉 初版發布
-- 🏠 首頁設計完成
-- 📄 所有功能頁面上線
+- 🎉 Initial release
+- 🏠 Homepage design
+- 📄 All feature pages
 
+---
+
+<p align="center">
+  Made with 💝 by the Bubly Team
+</p>

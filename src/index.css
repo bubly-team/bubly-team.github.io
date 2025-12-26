@@ -12,7 +12,7 @@
     --bubly-blue: 200 90% 70%;
     --bubly-violet: 262 83% 70%;
     --bubly-pink: 320 80% 70%;
-    
+
     /* Background - Light with gradient capability */
     --background: 240 20% 98%;
     --foreground: 240 10% 15%;
@@ -53,7 +53,7 @@
     --glass-bg: 0 0% 100% / 0.7;
     --glass-border: 0 0% 100% / 0.3;
     --glass-blur: 20px;
-    
+
     /* Shadows */
     --shadow-soft: 0 4px 30px hsl(262 83% 70% / 0.1);
     --shadow-glow: 0 0 40px hsl(200 90% 70% / 0.3);
@@ -109,6 +109,7 @@
 }
 
 @layer components {
+
   /* Glassmorphism Card */
   .glass {
     @apply backdrop-blur-xl border border-white/20 shadow-lg;
@@ -147,20 +148,24 @@
     background-size: 200% 200%;
     animation: gradientShift 6s ease infinite;
   }
+
   .btn-premium::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-500;
     background: linear-gradient(135deg, hsl(var(--bubly-violet)), hsl(var(--bubly-pink)) 50%, hsl(var(--bubly-sky)));
     background-size: 200% 200%;
   }
+
   .btn-premium:hover::before {
     @apply opacity-100;
   }
+
   .btn-premium::after {
     content: '';
     @apply absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, transparent 50%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, transparent 50%, transparent 100%);
   }
+
   .btn-premium:hover::after {
     @apply opacity-100;
   }
@@ -170,6 +175,7 @@
     @apply backdrop-blur-xl border border-white/20 rounded-2xl font-semibold transition-all duration-500;
     background: rgba(255, 255, 255, 0.08);
   }
+
   .btn-glass:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
@@ -208,6 +214,7 @@
   .hover-scale {
     @apply transition-all duration-500 ease-out;
   }
+
   .hover-scale:hover {
     transform: scale(1.03);
   }
@@ -216,33 +223,37 @@
   .link-underline {
     @apply relative;
   }
+
   .link-underline::after {
     content: '';
     @apply absolute bottom-0 left-0 w-full h-0.5 scale-x-0 origin-right transition-transform duration-300;
     background: linear-gradient(90deg, hsl(var(--bubly-sky)), hsl(var(--bubly-violet)));
   }
+
   .link-underline:hover::after {
     @apply scale-x-100 origin-left;
   }
 }
 
 @layer utilities {
+
   /* Mesh gradient background */
   .mesh-gradient {
     background-color: hsl(var(--background));
-    background-image: 
+    background-image:
       radial-gradient(at 40% 20%, hsl(var(--bubly-sky) / 0.2) 0px, transparent 50%),
       radial-gradient(at 80% 0%, hsl(var(--bubly-violet) / 0.15) 0px, transparent 50%),
       radial-gradient(at 0% 50%, hsl(var(--bubly-pink) / 0.1) 0px, transparent 50%),
       radial-gradient(at 80% 50%, hsl(var(--bubly-blue) / 0.15) 0px, transparent 50%),
       radial-gradient(at 0% 100%, hsl(var(--bubly-violet) / 0.1) 0px, transparent 50%);
   }
-  
+
   /* Hide scrollbar for horizontal scroll areas */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -250,9 +261,12 @@
 
 /* Gentle float - very subtle up/down movement */
 @keyframes floatGentle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-6px);
   }
@@ -260,9 +274,12 @@
 
 /* Soft breathing scale */
 @keyframes breathe {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.02);
   }
@@ -270,9 +287,12 @@
 
 /* Subtle glow pulse */
 @keyframes pulseGlowSoft {
-  0%, 100% {
+
+  0%,
+  100% {
     filter: drop-shadow(0 8px 24px hsl(262 83% 70% / 0.25));
   }
+
   50% {
     filter: drop-shadow(0 12px 32px hsl(262 83% 70% / 0.35));
   }
@@ -283,6 +303,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -290,8 +311,13 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
@@ -299,6 +325,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -307,10 +334,13 @@
 
 /* Very gentle bubble float for background */
 @keyframes bubbleFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
     opacity: 0.4;
   }
+
   50% {
     transform: translateY(-15px);
     opacity: 0.6;
@@ -322,9 +352,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -332,9 +364,12 @@
 
 /* Soft bounce for scrolling */
 @keyframes bounce-soft {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-4px);
   }
@@ -359,6 +394,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -388,9 +424,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -399,4 +437,43 @@
 .background-animate {
   background-size: 400% 400%;
   animation: backgroundAnimate 6s ease infinite;
+}
+
+/* Drift animation for floating elements */
+@keyframes drift {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+  }
+
+  75% {
+    transform: translateY(-15px) translateX(3px);
+  }
+}
+
+.animate-drift {
+  animation: drift 8s ease-in-out infinite;
+}
+
+/* 3D perspective for team cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+/* Conic gradient for rotating borders */
+.bg-gradient-conic {
+  background: conic-gradient(var(--tw-gradient-stops));
 }

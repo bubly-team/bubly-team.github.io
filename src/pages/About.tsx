@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { InteractiveBubbo } from "@/components/InteractiveBubbo";
+import { TeamSection } from "@/components/TeamSection";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -310,6 +311,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* FAQ Section - Premium */}
       <section className="py-12 md:py-24 overflow-hidden">

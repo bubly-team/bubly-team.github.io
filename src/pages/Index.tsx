@@ -6,6 +6,8 @@ import { GlassCard } from "@/components/GlassCard";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { FollowCursorBubbo, InteractiveBubbo } from "@/components/InteractiveBubbo";
 import { AIAssistantDemo } from "@/components/AIAssistantDemo";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { GettingStarted } from "@/components/GettingStarted";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -381,6 +383,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Getting Started Section */}
+      <GettingStarted />
+
       {/* Bubbo Gallery Section */}
       <section className="py-12 md:py-24 overflow-hidden relative">
         <BubboGallery />
@@ -476,6 +481,9 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* CTA Section - Premium Immersive */}
       <section className="py-16 md:py-32 relative overflow-hidden">
