@@ -6,7 +6,7 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   // GitHub Pages 部署時使用 repository 名稱作為 base URL
   // 如果是自訂網域或是 username.github.io，請設為 '/'
-  base: mode === 'production' ? '/bubbo-s-world/' : '/',
+  base: mode === 'production' ? '/bubly-website/' : '/',
 
   server: {
     host: "::",
