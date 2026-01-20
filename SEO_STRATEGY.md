@@ -1,10 +1,46 @@
-# Bubly 官網 SEO 策略計劃 v2.0
+# Bubly 官網 SEO 策略計劃 v3.1
 
-> **願景**：讓 Bubly 成為美國年輕人（尤其是大學生）在維繫友誼、慶祝生日時的首選 APP，並透過成熟的 SEO 策略確保網站在相關搜尋中持續被發現。
+> **願景**：讓 Bubly 成為美國年輕人（尤其是大學生）在維繫友誼、慶祝生日時的首選 APP，並透過 2026 最新的 AI 搜尋引擎優化 (SGE & SGM) 確保網站在 AI Overviews 與傳統搜尋中皆能佔據主導地位。
+
+---
+
+## ☁️ Cloudflare SEO 加速與優化指南
+
+**核心優勢**：如果你的 DNS 是代管在 Cloudflare，你可以直接開啟以下功能來「秒殺」傳統 SEO 的速度要求，並主動推送內容給搜尋引擎。
+
+### 1. 🚀 一鍵加速 (Performance)
+*前往 Cloudflare Dashboard > Speed > Optimization*
+
+| 功能               | 設定建議           | SEO 效益                                                       |
+| ------------------ | ------------------ | -------------------------------------------------------------- |
+| **Auto Minify**    | 勾選 HTML, CSS, JS | 減少檔案大小，提升爬蟲抓取效率                                 |
+| **Brotli**         | On (預設)          | 比 Gzip 更高效率的壓縮，提升 LCP                               |
+| **Rocket Loader™** | On                 | **重要**！非同步載入 JS，顯著提升 FCP (First Contentful Paint) |
+| **Early Hints**    | On                 | 告訴瀏覽器預先載入資源，提升頁面感知速度                       |
+
+### 2. 🤖 Crawler Hints & IndexNow (主動推送)
+*前往 Cloudflare Dashboard > Cache > Configuration*
+
+> 這是 2026 必備功能。不用等 Google 爬蟲慢慢爬，主動告訴它「我更新了！」
+
+*   **Crawler Hints**: **開啟 (Turn On)**
+    *   **原理**：當有人訪問你的網站且 Cloudflare 發現內容變更時，自動通知搜尋引擎 (Bing, Yandex, 未來的 Google)。
+    *   **效益**：新內容幾乎「即時」被索引，包含 **IndexNow** 協議的支援。
+
+### 3. 🖼️ 圖片優化 (如果使用 Cloudflare Images/Polish)
+如果你的方案支援 (Pro plan 或加購)，開啟 **Polish** 與 **WebP** 自動轉換，這對 Mobile SEO 分數至關重要。
+
+### 4. 🔒 安全性即 SEO (Security)
+*前往 Cloudflare Dashboard > SSL/TLS*
+
+*   **Always Use HTTPS**: **On** (Google 強制排名因素)
+*   **HSTS**: **On** (確保瀏覽器強制使用安全連線)
+*   **Minimum TLS Version**: 設定為 **1.2** (兼顧安全性與舊裝置相容性)
 
 ---
 
 ## 🎯 目標市場與推廣策略
+*(其餘內容保持不變，見下方)*
 
 ### 核心受眾
 | 區隔         | 描述                              |
@@ -37,151 +73,109 @@
 
 ---
 
-## 🔍 SEO 關鍵字策略 (年輕人導向)
+## 🔍 2026 SEO 關鍵字策略 (SGE & 語意搜尋導向)
 
-### 主要關鍵字 (Primary)
-| 關鍵字                                    | 搜尋意圖     | 目標頁面    |
-| ----------------------------------------- | ------------ | ----------- |
-| `birthday message generator AI`           | 找工具寫祝福 | `/features` |
-| `never forget birthday app`               | 解決痛點     | `/`         |
-| `best friend birthday reminder`           | 情境需求     | `/features` |
-| `personal CRM for friends`                | 進階用戶     | `/features` |
-| `contact management app for personal use` | 聯絡人管理   | `/features` |
-| `relationship manager app`                | 關係管理     | `/`         |
-| `friend tracker app`                      | 朋友追蹤     | `/features` |
+> **策略轉變**：從「關鍵字堆疊」轉向「回答用戶問題」。2026 的 AI 搜尋引擎 (Google SGE) 偏好能直接解答用戶意圖的內容。
 
-### 次要關鍵字 (Secondary)
-**生日祝福類**
-- `AI birthday wishes`
-- `personalized greeting messages`
-- `what to write in birthday card`
-- `heartfelt birthday messages`
+### 核心主題群組 (Topic Clusters)
 
-**聯絡人管理類**
-- `contact organizer app`
-- `smart contact manager iOS`
-- `personal contacts app`
-- `keep in touch with friends app`
-- `organize contacts by relationship`
+#### 1. 關係維護與社交管理 (Relationship Management)
+*目標：捕捉 "How to" 與 "Best tool" 搜尋意圖*
+- `best app to remember friends birthdays for iphone`
+- `personal CRM for college students`
+- `how to stay in touch with friends after graduation`
+- `app to organize contacts by friend group`
+- `track friendships and important dates app`
 
-**朋友關係類**
-- `friendship tracker app`
-- `stay connected with friends`
-- `manage friendships app`
-- `remember friends birthdays`
-- `friend reminder app`
+#### 2. 生日與祝福解決方案 (Birthday & Gifting)
+*目標：捕捉 "Generative" (生成內容) 搜尋意圖*
+- `AI birthday card message generator`
+- `what to write in a birthday card for best friend`
+- `funny birthday wishes for college friends`
+- `last minute birthday gift ideas reminder`
+- `heartfelt birthday paragraphs for bestie`
 
-**關係管理類**
-- `personal relationship manager`
-- `relationship CRM`
-- `social relationship tracker`
-- `personal network manager`
-- `nurture relationships app`
-
-### 長尾關鍵字 (Long-tail)
-**生日/祝福情境**
-- `how to write a heartfelt birthday message for best friend`
-- `AI that writes birthday cards for you`
-- `free birthday reminder app for iPhone`
-
-**聯絡人/朋友情境**
-- `app to organize friends and family contacts`
-- `best app to manage personal relationships`
-- `how to keep track of friends birthdays and important dates`
-- `app to remember when to contact friends`
-- `personal CRM app for maintaining friendships`
-
-**校園/年輕人情境**
-- `best app for college students to track friends birthdays`
-- `stay connected with friends after graduation`
-- `best apps for college students 2025`
-- `app to not lose touch with friends`
-
-### 校園相關關鍵字
-- `college student friendship app`
-- `stay connected with friends after graduation`
-- `best apps for college students 2025`
+#### 3. 隱私與安全 (Privacy Constraints)
+*目標：捕捉 "Trust" (信賴感) 搜尋意圖，建立 E-E-A-T 權威性*
+- `private relationship tracker app`
+- `contact manager app that doesn't sell data`
+- `secure offline personal CRM iOS`
 
 ---
 
-## 🛠 技術實作計劃
+### 4. 🚀 新功能 SEO (Friendship Deck & Vibe Check)
+*目標：捕捉 "Social Sync" 與 "Relationship Health" 相關的高潛力長尾詞*
 
-### 1. 動態頁面 Metadata (`react-helmet-async`)
+**關鍵字策略**
+- `relationship vibe check app`
+- `track friendship health score`
+- `smart contact updates feed`
+- `how to know if you are losing touch with friends`
+- `emotional temperature of relationships`
 
-#### 各頁面 Title & Description（年輕化語氣）
-
-| 頁面         | Title                                                        | Description                                                                                                                       |
-| ------------ | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| **首頁**     | Bubly — Never Forget a Birthday Again \| AI Social Assistant | Your AI-powered sidekick for remembering birthdays, sending heartfelt messages, and keeping friendships alive. Free on iOS.       |
-| **Features** | AI Birthday Messages & Smart Reminders \| Bubly Features     | Generate personalized birthday wishes with AI, get smart reminders, and never miss a friend's special day. See what Bubly can do. |
-| **About**    | Meet Bubly & Bubbo — Our Story                               | We built Bubly because friendships matter. Meet our team and our adorable mascot Bubbo.                                           |
-| **Contact**  | Say Hi to the Bubly Team \| Contact & Feedback               | Got ideas? Found a bug? Just wanna chat? We'd love to hear from you.                                                              |
-| **Privacy**  | Privacy Policy \| Bubly                                      | Your data stays on your phone. No tracking, no ads, no BS.                                                                        |
-| **Terms**    | Terms of Service \| Bubly                                    | The boring legal stuff, but important.                                                                                            |
-
-### 2. Sitemap (`public/sitemap.xml`)
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bubly.app/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://bubly.app/features</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://bubly.app/about</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://bubly.app/contact</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://bubly.app/privacy</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://bubly.app/terms</loc><priority>0.4</priority><changefreq>yearly</changefreq></url>
-</urlset>
-```
-
-### 3. Robots.txt 更新
-```
-User-agent: *
-Allow: /
-Sitemap: https://bubly.app/sitemap.xml
-```
-
-### 4. JSON-LD 結構化資料
-- **SoftwareApplication** — iOS APP 資訊、免費下載、5 星評價
-- **Organization** — Bubly 品牌、Logo、社群連結
-- **FAQPage** (About 頁) — 提升精選摘要機會
+**內容優化 (Features 頁)**
+- **Friendship Deck Showcase**：展示 "Smart Updates Feed" 如何讓用戶輕鬆掌握朋友動態。
+    - H2 建議：*Stay in Sync with Your Squad*
+- **Vibe Check Showcase**：強調 AI 如何作為 "Social Coach" 提醒互動。
+    - H2 建議：*Check Your Vibe, Keep It Alive*
+- **結構化資料**：在 `SoftwareApplication` 中強調這些獨特功能 (FeatureList)。
 
 ---
 
-## 📝 內容優化重點
+## 🛠 2026 技術實作計劃 (Technical SEO for AI)
 
-### 首頁
-- H1: `Never Forget Who Matters` (保留情感訴求)
-- 強化 CTA: `Download Free — It's Your Friendship Sidekick`
+### 1. 結構化資料 (Schema Markup) - **AI 理解的核心**
+這是 2026 年最重要的項目，幫助 Google 的 AI (Gemini) 理解 Bubly 是什麼。
 
-### Features 頁
-- 確保三大功能各有獨立的 H2 標籤
-- 圖片 alt 標籤要包含功能關鍵字 (如 `AI birthday message generator screenshot`)
+| Schema 類型             | 用途              | 實作頁面       | 關鍵屬性                                                              |
+| ----------------------- | ----------------- | -------------- | --------------------------------------------------------------------- |
+| **SoftwareApplication** | 定義 APP 實體     | 全站 header    | `applicationCategory`, `operatingSystem`, `aggregateRating`, `offers` |
+| **Organization**        | 建立品牌權威      | 全站 header    | `logo`, `sameAs` (連結 App Store, Socials)                            |
+| **FAQPage**             | 搶佔 SGE 問答版位 | About/Features | `mainEntity` (Q&A 列表)                                               |
+| **HowTo**               | 指導 AI 展示步驟  | Features       | "How to generate a birthday wish with AI"                             |
 
-### About 頁
-- FAQ 區塊加入結構化資料 (FAQPage Schema)
-- 強調校園文化、年輕團隊形象
+### 2. SGE 優化 (Search Generative Experience)
+- **直接回答問題**：在頁面內容中，針對常見問題提供 `<H2>` 問題 + 直接段落回答。
+    - 例如在 Features 頁增加：*<h2>How does Bubly help me remember birthdays?</h2>*
+- **對話式語氣**：使用 "You", "We", "Your friends" 等自然語言，符合語音搜尋與 Chatbot 提問習慣。
 
----
-
-## 🚀 校園行銷 + SEO 整合建議
-
-| 策略                          | SEO 效益                                                     |
-| ----------------------------- | ------------------------------------------------------------ |
-| **Campus Ambassador Program** | 產生 UGC 內容與社群分享連結                                  |
-| **「Best Friend Day」活動頁** | 可建立 `/events/best-friend-day` 等活動頁面吸引搜尋流量      |
-| **TikTok/Reels AI Demo**      | 嵌入網站增加停留時間、降低跳出率                             |
-| **App Store 評價引導**        | 提升 ASO，間接增加品牌搜尋量                                 |
-| **部落格 (未來)**             | 建立 `/blog` 發布如「50+ Birthday Message Ideas」等 SEO 文章 |
+### 3. Core Web Vitals (2026 標準)
+- **INP (Interaction to Next Paint)**：必須 < 200ms。Bubly 使用 React，需確保 hydration 效能與事件回應速度。
+- **LCP (Largest Contentful Paint)**：必須 < 2.5s。首頁 Hero 圖片與影片需預載 (Preload)。
 
 ---
 
-## ✅ 驗證計劃
+## 📝 內容優化與行銷整合 (Omnichannel SEO)
 
-### 部署後立即執行
-1. **Google Search Console** — 提交 sitemap、驗證網域
-2. **Google Rich Results Test** — 驗證結構化資料
-3. **Facebook/Twitter Card Validators** — 確認 OG 標籤
-4. **Lighthouse SEO Audit** — 目標分數 > 95
+### 1. 短影音 SEO (TikTok/Reels/Shorts)
+2026 年，影片是搜尋的重要入口。
+- **策略**：在 TikTok/Reels 的 caption 中包含主要關鍵字 (如 `best birthday app`)。
+- **網站整合**：將熱門 TikTok 影片嵌入官網 (增加停留時間，Google 把這視為高品質訊號)。
+
+### 2. App Store Optimization (ASO) 連動
+- **Google App Packs**：Google 搜尋會直接顯示 App Store 下載卡片。
+- **行動**：確保 App Store 的 "Description" 第一段就包含 `AI birthday reminder` 與 `personal CRM` 等核心詞彙。
+
+### 3. 校園大使計畫 (Backlink Strategy)
+- 請校園大使在學校論壇 (Reddit, Discord, School Papers) 分享連結。
+- **高權重反向連結**：`.edu` 網域的連結對 SEO 權重極高。
 
 ---
 
-**狀態**：計劃已更新，待確認後開始實作。
+## ✅ 驗證計劃 (The 2026 Checklist)
+
+### 部署後檢查清單
+1. **Google Search Console**
+    - [ ] 提交 Sitemap (`https://www.bublyapp.com/sitemap.xml`)
+    - [ ] 確認 "Merchant Listings" 或 "Product Snippets" (因有 Offer Schema) 狀態
+2. **Rich Results Test**
+    - [ ] 驗證 **SoftwareApplication** Schema 無錯誤
+    - [ ] 驗證 **FAQPage** Schema 是否能被解析
+3. **AI Snapshot Test**
+    - [ ] 嘗試搜尋 "Bubly app review" 或 "best app for birthdays"，觀察 Google SGE 是否引用官網內容。
+4. **Social Signals**
+    - [ ] 確認 Twitter/Facebook Card 預覽圖是否吸睛 (CTR 影響排名)。
+
+---
+
+**狀態**：策略已更新為 v3.1，新增 Cloudflare 部署的專屬優化指南。

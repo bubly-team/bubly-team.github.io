@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Bubbo } from "@/components/Bubbo";
+import { FriendshipDeckDemo } from "@/components/FriendshipDeckDemo";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -93,6 +94,11 @@ const Features = () => {
             </p>
           </ScrollReveal>
         </div>
+      </section>
+
+      {/* New Feature: Friendship Deck Showcase */}
+      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-b from-transparent via-white/50 to-transparent">
+        <FriendshipDeckDemo />
       </section>
 
       {/* Main Features - Premium Showcase */}
