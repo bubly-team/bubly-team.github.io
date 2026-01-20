@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { InteractiveBubbo } from "@/components/InteractiveBubbo";
 import { MessageSquare, ArrowRight, Sparkles } from "lucide-react";
@@ -23,6 +24,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Say Hi to the Bubly Team | Contact & Feedback"
+        description="Got ideas? Found a bug? Just wanna chat? We'd love to hear from you. Get in touch with the Bubly team."
+        path="/contact"
+      />
       {/* Hero Section - Immersive */}
       <section className="relative py-12 md:py-32 overflow-hidden">
         {/* Background layers */}

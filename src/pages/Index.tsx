@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { BubboGallery, FloatingBubbos } from "@/components/BubboGallery";
 import { HeroParticles, AmbientOrbs, GradientMesh, Sparkles } from "@/components/HeroParticles";
 import { GlassCard } from "@/components/GlassCard";
@@ -67,6 +68,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Bubly — Never Forget a Birthday Again | AI Social Assistant"
+        description="Your AI-powered sidekick for remembering birthdays, sending heartfelt messages, and keeping friendships alive. Smart contact management & relationship tracker. Free on iOS."
+        path="/"
+      />
       {/* Hero Section - Clean & Elegant */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Enhanced background layers */}

@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Lock, Eye, Database, Bell, Users, Globe, Mail } from "lucide-react";
@@ -103,6 +104,11 @@ const Privacy = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Privacy Policy"
+        description="Your data stays on your phone. No tracking, no ads. Learn how Bubly protects your privacy with local-first architecture."
+        path="/privacy"
+      />
       {/* Hero Section */}
       <section className="relative py-16 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-bubly-violet/5 via-transparent to-transparent pointer-events-none" />

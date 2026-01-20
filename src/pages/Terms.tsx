@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Link } from "react-router-dom";
 import { ArrowRight, FileText, CheckCircle, AlertTriangle, CreditCard, Scale, Zap, RefreshCw, MessageSquare, Gavel } from "lucide-react";
@@ -159,6 +160,11 @@ Our total liability shall not exceed the amount you paid for the Service in the 
 
   return (
     <Layout>
+      <SEO
+        title="Terms of Service"
+        description="The rules and guidelines for using Bubly responsibly. Read our terms of service."
+        path="/terms"
+      />
       {/* Hero Section */}
       <section className="relative py-16 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-bubly-pink/5 via-transparent to-transparent pointer-events-none" />

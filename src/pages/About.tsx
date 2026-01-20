@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { SEO } from "@/components/SEO";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { InteractiveBubbo } from "@/components/InteractiveBubbo";
 import { TeamSection } from "@/components/TeamSection";
@@ -76,6 +77,11 @@ const values = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="Meet Bubly & Bubbo — Our Story"
+        description="We built Bubly because friendships matter. Meet our team and our adorable mascot Bubbo. Making relationship management simple, private, and delightful."
+        path="/about"
+      />
       {/* Hero Section - Immersive */}
       <section className="relative py-16 md:py-32 overflow-hidden">
         {/* Background layers */}

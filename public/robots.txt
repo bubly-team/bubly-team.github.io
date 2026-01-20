@@ -1,14 +1,12 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Bubly - robots.txt
+# https://www.bublyapp.com
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://www.bublyapp.com/sitemap.xml
+
+# Block paths that shouldn't be indexed
+Disallow: /api/
+Disallow: /*.json$
