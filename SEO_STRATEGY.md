@@ -75,8 +75,52 @@
 
 ## 🔍 2026 SEO 關鍵字策略 (SGE & 語意搜尋導向)
 
-> **策略轉變**：從「關鍵字堆疊」轉向「回答用戶問題」。2026 的 AI 搜尋引擎 (Google SGE) 偏好能直接解答用戶意圖的內容。
+> **策略轉變**：從「關鍵字堆疊」轉向「回答用戶問題」。2026 的 AI 搜尋引擎 (Google SGE) 偏好能直接解答用戶意圖的內容。# SEO & Visual Presence Improvement Plan
 
+## Goal
+Transform the search engine appearance of Bubly to match professional standards (like Tiimo), specifically addressing:
+1.  **Missing Icon**: Google Search results showing a default globe instead of the brand logo.
+2.  **Rich Search Results (Sitelinks)**: Achieving the "expanded" look with sub-links (e.g., "Features", "Contact", "Login").
+3.  **Professional Metadata**: structured data to tell Google clearly "This is a Mobile Application".
+
+## Strategy
+
+### 1. Fix the "No Icon" Issue
+Google requires a specific setup to show your favicon in search results:
+- **Format**: Square image, multiple of 48px (e.g., 48x48, 96x96, 144x144). 
+- **Current Status**: We have a high-res `favicon.png` (1300x1300). 
+- **Action**: 
+    - We will configure the HTML to explicitly point to this high-res image as the primary icon. Google is smart enough to downscale high-res images, but the definition must be precise.
+    - We will standardise the meta tags for icons.
+
+### 2. Achieve "Tiimo-like" Sitelinks (The Multi-row layout)
+**Important Context**: "Sitelinks" (the extra links shown below the main result) are *automated* by Google. We cannot "force" them, but we can significantly increase the chances of them appearing by:
+- **Structured Data (JSON-LD)**: giving Google a machine-readable map of the site.
+- **Clear Navigation**: Ensuring the website has a `<nav>` element with clear links to internal pages/sections (e.g., `/contact`, `/terms`, `/privacy`).
+- **Sitemap**: ensuring `sitemap.xml` is perfect.
+
+### 3. Implementation Steps
+
+#### Step A: JSON-LD Structured Data (The "Secret Sauce")
+We will inject a script into `index.html` describing the app using Schema.org standards.
+- **Type**: `SoftwareApplication`
+- **Name**: Bubly
+- **OperatingSystem**: iOS, Android
+- **ApplicationCategory**: SocialNetworkingApplication
+- **Offers**: Free / Price 0
+
+#### Step B: Enhance `index.html` Metadata
+- Refine Title/Description to be concise and click-worthy.
+- Ensure `og:image` and Twitter cards are correctly set up (already seem okay, will double-check).
+
+#### Step C: Verify Navigation Structure
+- Ensure the main landing page has clear anchor links or navigation items that match potential sitelinks (e.g., "Contact Us", "Privacy Policy").
+
+#### Step D: Sitemap & Robots
+- Verify `sitemap.xml` includes all discoverable pages.
+
+## User Actions Required (Post-Update)
+- Once deployed, request a **re-indexing** via Google Search Console. Changes are not instant; they can take days to weeks to reflect in search results.
 ### 核心主題群組 (Topic Clusters)
 
 #### 1. 關係維護與社交管理 (Relationship Management)
