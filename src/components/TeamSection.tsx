@@ -7,6 +7,7 @@ import bubboBusiness from "@/assets/bubbo-business.png";
 import bubboVR from "@/assets/bubbo-vr.png";
 import bubboArtist from "@/assets/bubbo-artist.png";
 
+
 const teamMembers = [
     {
         id: "rebecca",
@@ -55,7 +56,7 @@ const teamMembers = [
     },
     {
         id: "finn",
-        name: "Finn",
+        name: "F!nn",
         tag: "ALCHEMIST",
         role: "UI/UX Designer",
         bubboImage: bubboArtist,

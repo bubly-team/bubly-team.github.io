@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
-import { BubboGallery, FloatingBubbos } from "@/components/BubboGallery";
+
 import { HeroParticles, AmbientOrbs, GradientMesh, Sparkles } from "@/components/HeroParticles";
 import { GlassCard } from "@/components/GlassCard";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -13,9 +13,9 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // App screenshots
-import screenshot1 from "@/assets/app-screenshot-1.png";
-import screenshot2 from "@/assets/app-screenshot-2.png";
-import screenshot3 from "@/assets/app-screenshot-3.png";
+import screenshotGiftFinder from "@/assets/app-screenshot-gift-finder.png";
+import screenshotCalendar from "@/assets/app-screenshot-calendar.png";
+import screenshotAIBlessing from "@/assets/app-screenshot-ai-blessings.png";
 import screenshot4 from "@/assets/app-screenshot-4.png";
 import screenshot5 from "@/assets/app-screenshot-5.png";
 import screenshot6 from "@/assets/app-screenshot-6.png";
@@ -32,28 +32,28 @@ const APP_STORE_URL = "https://apps.apple.com/us/app/bubly-social-assistant/id67
 
 const coreFeatures = [
   {
-    title: "Smart Contacts",
-    subtitle: "Know Your Bubbles",
-    description: "Track hobbies, interests, and milestones. Add personal notes and never forget what matters.",
-    screenshot: screenshot5,
-    bubbo: bubboThinking,
-    gradient: "from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30",
+    title: "Gift Finder",
+    subtitle: "Never Run Out of Ideas",
+    description: "Discover curated treasures for every recipient - luxury, quirky, elegant or thoughtful.",
+    screenshot: screenshotGiftFinder,
+    // bubbo: bubboThinking,
+    // gradient: "from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30",
   },
   {
     title: "AI Greetings",
     subtitle: "Craft Perfect Wishes",
     description: "Generate personalized messages in any vibe—warm, fun, formal, or short.",
-    screenshot: screenshot4,
-    bubbo: bubboWave,
-    gradient: "from-bubly-pink/30 via-bubly-violet/20 to-bubly-sky/30",
+    screenshot: screenshotAIBlessing,
+    // bubbo: bubboWave,
+    // gradient: "from-bubly-pink/30 via-bubly-violet/20 to-bubly-sky/30",
   },
   {
     title: "Event Calendar",
     subtitle: "Never Miss a Moment",
     description: "Track birthdays, anniversaries, and special moments with an intelligent calendar.",
-    screenshot: screenshot6,
-    bubbo: bubboPoint,
-    gradient: "from-bubly-violet/30 via-bubly-pink/20 to-bubly-sky/30",
+    screenshot: screenshotCalendar,
+    // bubbo: bubboPoint,
+    // gradient: "from-bubly-violet/30 via-bubly-pink/20 to-bubly-sky/30",
   },
 ];
 
@@ -220,183 +220,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* App Preview Section */}
-      <section className="py-12 md:py-24 overflow-hidden relative">
-        {/* Subtle background glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bubly-violet/5 via-transparent to-transparent pointer-events-none" />
-
-        {/* Floating emojis - hidden on mobile */}
-        <div className="hidden md:block absolute top-12 left-[10%] text-3xl animate-float-gentle opacity-60" style={{ animationDuration: "6s" }}>📱</div>
-        <div className="hidden md:block absolute top-1/3 right-[8%] text-3xl animate-float-gentle opacity-60" style={{ animationDuration: "5s", animationDelay: "1s" }}>💬</div>
-        <div className="hidden md:block absolute bottom-16 left-[15%] text-2xl animate-float-gentle opacity-50" style={{ animationDuration: "7s", animationDelay: "2s" }}>🌸</div>
-        <div className="hidden md:block absolute bottom-1/4 right-[12%] text-xl animate-float-gentle opacity-50" style={{ animationDuration: "5.5s", animationDelay: "0.5s" }}>👋</div>
-
-        <div className="container mx-auto px-4 relative">
-          <ScrollReveal className="text-center mb-8 md:mb-20">
-            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
-              App Preview
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
-              See <span className="gradient-text">Bubly</span> in Action ✨
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-lg">
-              A beautifully designed app that makes managing relationships feel natural
-            </p>
-          </ScrollReveal>
-
-          {/* Screenshots showcase - Horizontal scroll on mobile */}
-          <div className="flex md:flex-row items-stretch justify-start md:justify-center gap-4 md:gap-10 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide">
-            {/* Left screenshot */}
-            <ScrollReveal delay={0} direction="up" className="flex-shrink-0 w-[200px] md:w-1/3 md:mt-12 snap-center">
-              <div className="transition-all duration-700 hover:-translate-y-2 group">
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/10 to-bubly-pink/20 rounded-[1.5rem] md:rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                  <div className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.2)] md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] border border-white/10 backdrop-blur-sm">
-                    <img src={screenshot6} alt="Event Calendar" className="w-full h-auto" />
-                  </div>
-                </div>
-                <p className="text-center mt-3 md:mt-5 text-xs md:text-sm font-medium text-muted-foreground/80">📅 Event Calendar</p>
-              </div>
-            </ScrollReveal>
-
-            {/* Center screenshot - featured */}
-            <ScrollReveal delay={150} direction="up" className="flex-shrink-0 w-[220px] md:w-1/3 z-10 md:-mt-8 snap-center">
-              <div className="transition-all duration-700 hover:-translate-y-3 group">
-                <div className="relative">
-                  <div className="absolute -inset-2 bg-gradient-to-br from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30 rounded-[1.5rem] md:rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-                  <div className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-[0_15px_40px_-10px_rgba(167,139,250,0.3)] md:shadow-[0_30px_80px_-20px_rgba(167,139,250,0.4)] border border-primary/20 ring-1 ring-white/10">
-                    <img src={screenshot3} alt="Smart Dashboard" className="w-full h-auto" />
-                  </div>
-                </div>
-                <p className="text-center mt-3 md:mt-5 text-xs md:text-sm font-semibold gradient-text">🏠 Smart Dashboard</p>
-              </div>
-            </ScrollReveal>
-
-            {/* Right screenshot */}
-            <ScrollReveal delay={300} direction="up" className="flex-shrink-0 w-[200px] md:w-1/3 md:mt-12 snap-center">
-              <div className="transition-all duration-700 hover:-translate-y-2 group">
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-bubly-pink/20 via-bubly-violet/10 to-bubly-sky/20 rounded-[1.5rem] md:rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                  <div className="relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.2)] md:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.2)] border border-white/10 backdrop-blur-sm">
-                    <img src={screenshot4} alt="AI Greetings" className="w-full h-auto" />
-                  </div>
-                </div>
-                <p className="text-center mt-3 md:mt-5 text-xs md:text-sm font-medium text-muted-foreground/80">💌 AI Greetings</p>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Scroll hint for mobile */}
-          <div className="flex md:hidden justify-center mt-4 gap-1.5">
-            <div className="w-6 h-1 rounded-full bg-bubly-violet/60" />
-            <div className="w-1.5 h-1 rounded-full bg-muted-foreground/30" />
-            <div className="w-1.5 h-1 rounded-full bg-muted-foreground/30" />
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Showcase Section */}
-      <section className="py-12 md:py-24 overflow-hidden relative">
-        {/* Floating campus emojis - hidden on mobile */}
-        <div className="hidden md:block absolute top-20 left-[5%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "8s" }}>🎒</div>
-        <div className="hidden md:block absolute top-1/2 right-[6%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "6s", animationDelay: "1.5s" }}>📝</div>
-        <div className="hidden md:block absolute bottom-20 left-[8%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "7s", animationDelay: "3s" }}>🎵</div>
-        <div className="hidden md:block absolute top-1/3 left-[3%] text-xl animate-float-gentle opacity-30" style={{ animationDuration: "9s", animationDelay: "2s" }}>🌟</div>
-        <div className="hidden md:block absolute bottom-1/3 right-[5%] text-xl animate-float-gentle opacity-30" style={{ animationDuration: "7.5s", animationDelay: "0.5s" }}>💫</div>
-
-        <div className="container mx-auto px-4 relative">
-          {/* Feature 1: Contact Management */}
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-16 mb-16 md:mb-32">
-            <ScrollReveal direction="right" className="flex-1 text-center lg:text-left space-y-4 md:space-y-6">
-              <span className="inline-block px-3 py-1 rounded-full bg-bubly-violet/10 text-bubly-violet text-xs font-medium tracking-wide">
-                👥 Contact Details
-              </span>
-              <h3 className="text-xl md:text-3xl font-bold leading-tight">
-                Know Your <span className="gradient-text">Bubbles</span> Better
-              </h3>
-              <p className="text-muted-foreground text-sm md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Keep track of hobbies, interests, and important milestones in one place.
-                Add personal notes and never forget what matters to your friends. 🫶
-              </p>
-            </ScrollReveal>
-            <ScrollReveal direction="left" delay={200} className="flex-1 flex justify-center w-full">
-              <div className="relative group transition-all duration-700 hover:-translate-y-2">
-                <div className="absolute -inset-2 md:-inset-3 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/15 to-bubly-pink/20 rounded-[2rem] md:rounded-[2.5rem] blur-xl md:blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative w-[200px] md:max-w-[280px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] md:shadow-[0_25px_70px_-20px_rgba(0,0,0,0.25)] border border-white/10">
-                  <img src={screenshot5} alt="Contact Management" className="w-full h-auto" />
-                </div>
-                {/* Decorative emoji - smaller on mobile */}
-                <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 text-xl md:text-2xl animate-float-gentle" style={{ animationDuration: "4s" }}>💝</div>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Feature 2: Home Dashboard */}
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-16">
-            <ScrollReveal direction="left" className="flex-1 text-center lg:text-left space-y-4 md:space-y-6">
-              <span className="inline-block px-3 py-1 rounded-full bg-bubly-pink/10 text-bubly-pink text-xs font-medium tracking-wide">
-                🎂 Your Universe
-              </span>
-              <h3 className="text-xl md:text-3xl font-bold leading-tight">
-                Relationships <span className="gradient-text">Deserve</span> to Be Remembered
-              </h3>
-              <p className="text-muted-foreground text-sm md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Your universe of friends at a glance. Track birthdays, anniversaries,
-                and special moments with an intelligent calendar that keeps you connected. ✨
-              </p>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={200} className="flex-1 flex justify-center w-full">
-              <div className="relative group transition-all duration-700 hover:-translate-y-2">
-                <div className="absolute -inset-2 md:-inset-3 bg-gradient-to-br from-bubly-pink/20 via-bubly-violet/15 to-bubly-sky/20 rounded-[2rem] md:rounded-[2.5rem] blur-xl md:blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative w-[200px] md:max-w-[280px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.2)] md:shadow-[0_25px_70px_-20px_rgba(0,0,0,0.25)] border border-white/10">
-                  <img src={screenshot1} alt="Home Dashboard" className="w-full h-auto" />
-                </div>
-                {/* Decorative emoji */}
-                <div className="absolute -bottom-2 -left-2 md:-bottom-4 md:-left-4 text-xl md:text-2xl animate-float-gentle" style={{ animationDuration: "5s", animationDelay: "0.5s" }}>🎉</div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Assistant Demo Section - Interactive */}
-      <section className="py-12 md:py-24 overflow-hidden relative">
-        {/* Ambient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bubly-sky/3 via-transparent to-bubly-pink/3 pointer-events-none" />
-
-        {/* Floating emojis - hidden on mobile */}
-        <div className="hidden md:block absolute top-20 left-[8%] text-3xl animate-float-gentle opacity-50" style={{ animationDuration: "6s" }}>💌</div>
-        <div className="hidden md:block absolute top-1/3 right-[10%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "7s", animationDelay: "1s" }}>✨</div>
-        <div className="hidden md:block absolute bottom-20 left-[12%] text-2xl animate-float-gentle opacity-45" style={{ animationDuration: "8s", animationDelay: "2s" }}>🎉</div>
-        <div className="hidden md:block absolute bottom-1/3 right-[8%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "6.5s", animationDelay: "0.5s" }}>💝</div>
-
-        <div className="container mx-auto px-4 relative">
-          <ScrollReveal className="text-center mb-12 md:mb-16">
-            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
-              ✨ Interactive Demo
-            </span>
-            <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">
-              Experience the <span className="gradient-text">AI Magic</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-lg">
-              See how Bubly's AI crafts personalized greetings that feel genuine and heartfelt
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200} direction="up">
-            <AIAssistantDemo />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Getting Started Section */}
-      <GettingStarted />
-
-      {/* Bubbo Gallery Section */}
-      <section className="py-12 md:py-24 overflow-hidden relative">
-        <BubboGallery />
-      </section>
-
       {/* Core Features Section - Premium Design */}
       <section className="py-12 md:py-24 overflow-hidden relative">
         {/* Ambient background */}
@@ -434,7 +257,7 @@ const Index = () => {
                 <div className="relative h-full">
                   {/* Screenshot with glow and floating Bubbo */}
                   <div className="relative mb-4 md:mb-8">
-                    <div className={`absolute -inset-2 md:-inset-4 bg-gradient-to-br ${feature.gradient} rounded-[2rem] md:rounded-[2.5rem] blur-xl md:blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700`} />
+                    <div className={`absolute -inset-2 md:-inset-4  rounded-[2rem] md:rounded-[2.5rem] blur-xl md:blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700`} />
                     <div className="relative rounded-[1.25rem] md:rounded-[1.5rem] overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.2)] md:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.2)] border border-white/10 transition-transform duration-700 group-hover:-translate-y-2">
                       <img
                         src={feature.screenshot}
@@ -442,14 +265,7 @@ const Index = () => {
                         className="w-full h-auto"
                       />
                     </div>
-                    {/* Contextual Bubbo - smaller on mobile */}
-                    <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-14 h-14 md:w-20 md:h-20 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 animate-float-gentle" style={{ animationDelay: `${index * 0.5}s` }}>
-                      <img
-                        src={feature.bubbo}
-                        alt="Bubbo"
-                        className="w-full h-full object-contain drop-shadow-xl"
-                      />
-                    </div>
+
                   </div>
 
                   {/* Text content */}
@@ -487,6 +303,43 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </section>
+
+
+
+      {/* AI Assistant Demo Section - Interactive */}
+      <section className="py-12 md:py-24 overflow-hidden relative">
+        {/* Ambient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bubly-sky/3 via-transparent to-bubly-pink/3 pointer-events-none" />
+
+        {/* Floating emojis - hidden on mobile */}
+        <div className="hidden md:block absolute top-20 left-[8%] text-3xl animate-float-gentle opacity-50" style={{ animationDuration: "6s" }}>💌</div>
+        <div className="hidden md:block absolute top-1/3 right-[10%] text-2xl animate-float-gentle opacity-40" style={{ animationDuration: "7s", animationDelay: "1s" }}>✨</div>
+        <div className="hidden md:block absolute bottom-20 left-[12%] text-2xl animate-float-gentle opacity-45" style={{ animationDuration: "8s", animationDelay: "2s" }}>🎉</div>
+        <div className="hidden md:block absolute bottom-1/3 right-[8%] text-xl animate-float-gentle opacity-40" style={{ animationDuration: "6.5s", animationDelay: "0.5s" }}>💝</div>
+
+        <div className="container mx-auto px-4 relative">
+          <ScrollReveal className="text-center mb-12 md:mb-16">
+            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full glass text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
+              ✨ Interactive Demo
+            </span>
+            <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">
+              Experience the <span className="gradient-text">AI Magic</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-lg">
+              See how Bubly's AI crafts personalized greetings that feel genuine and heartfelt
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200} direction="up">
+            <AIAssistantDemo />
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Getting Started Section */}
+      <GettingStarted />
+
+
 
       {/* Testimonials Section */}
       <TestimonialsSection />
