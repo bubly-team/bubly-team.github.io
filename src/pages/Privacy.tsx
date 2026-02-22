@@ -12,93 +12,68 @@ const Privacy = () => {
       title: "Information We Collect",
       content: [
         {
-          subtitle: "Information You Provide",
-          items: [
-            "Contact names, relationships, and notes you add to the app",
-            "Important dates such as birthdays and anniversaries",
-            "Preferences and settings you configure",
-            "Feedback or support requests you submit",
-          ]
+          subtitle: "Personal Information",
+          description: "We collect information you voluntarily provide when using the App, including: Contact information you enter, such as names, birthdays, anniversaries, relationship tags, and personal notes you enter. User-generated content such as keywords, prompts, and context provided for AI features."
         },
         {
-          subtitle: "Automatically Collected Information",
-          items: [
-            "App usage analytics (anonymized and aggregated)",
-            "Device information for compatibility purposes",
-            "Crash reports to improve app stability",
-          ]
-        },
-      ]
-    },
-    {
-      icon: Database,
-      title: "How We Store Your Data",
-      content: [
-        {
-          subtitle: "Local-First Architecture",
-          description: "Bubly is designed with privacy at its core. All your personal data—including contacts, notes, and reminders—is stored locally on your device. We do not have access to this information."
+          subtitle: "Usage Data",
+          description: "We may collect limited, anonymous usage data (such as feature usage frequency and app performance metrics) to improve the App. This data does not directly identify you."
         },
         {
-          subtitle: "iCloud Sync (Optional)",
-          description: "If you enable iCloud sync, your data is encrypted and stored in your personal iCloud account. This data is protected by Apple's security infrastructure, and we cannot access it."
+          subtitle: "Device Permissions",
+          description: "While using Our Application, in order to provide features of Our Application, We may collect, with Your prior permission: Pictures and other information from your Device's camera and photo library. We use this information to provide features of Our Service, to improve and customize Our Service. The information will only be simply stored on Your device. You can enable or disable access to this information at any time, through Your Device settings."
         },
       ]
     },
     {
       icon: Lock,
       title: "How We Use Your Information",
+      description: "We use your information solely to:",
       items: [
-        "To provide and maintain the Bubly service",
-        "To generate AI-powered greeting suggestions (processed without storing your inputs)",
-        "To send you reminders and notifications you've configured",
-        "To improve app performance and user experience",
-        "To respond to your support requests",
-      ]
+        "Provide and maintain the App's core functionality.",
+        "Organize contacts and relationship data.",
+        "Generate AI-assisted content (such as greetings or suggestions).",
+        "Send reminders and notifications.",
+        "Improve App performance and user experience.",
+      ],
+      note: "AI Processing Transparency: For AI-powered features, limited information (such as a contact's name, occasion, and relevant keywords) is sent to third-party AI service providers, including but not limited to OpenAI. We ensure that these providers process data in accordance with their strict privacy policies. For instance, data sent via API is generally not used to train their models."
+    },
+    {
+      icon: Database,
+      title: "Data Storage & Security",
+      description: "Your contact data is primarily stored locally on your device to ensure maximum privacy. Any data transmitted for AI processing or cloud backup (if enabled) is encrypted during transit and at rest."
+    },
+    {
+      icon: Shield,
+      title: "Data Sharing",
+      description: "We do not sell or rent your personal information. We may share limited data with trusted service providers solely for the purpose of operating the App (e.g., AI processing or analytics), under strict confidentiality obligations."
     },
     {
       icon: Globe,
       title: "Third-Party Services",
-      content: [
-        {
-          subtitle: "AI Services",
-          description: "We use AI providers to generate greeting suggestions. Your prompts are processed in real-time and are not stored or used for training purposes."
-        },
-        {
-          subtitle: "Apple Services",
-          description: "We integrate with Apple's ecosystem including App Store, iCloud (optional), and Push Notifications. These services are governed by Apple's Privacy Policy."
-        },
-        {
-          subtitle: "Analytics",
-          description: "We may use anonymized analytics to understand how users interact with the app. This data cannot be used to identify individual users."
-        },
-      ]
+      description: "Bubly may use third-party services to support certain features, including AI functionality. These services operate under their own privacy policies, and Bubly does not control their data practices. We encourage you to review their privacy policies for more information."
     },
     {
-      icon: Shield,
-      title: "Data Security",
-      description: "We implement industry-standard security measures to protect your information. Since data is primarily stored on your device, we recommend:",
+      icon: Bell,
+      title: "Your Rights (GDPR, CCPA, PDPA)",
+      description: "Depending on your location, you have the right to:",
       items: [
-        "Keeping your device's operating system updated",
-        "Using a strong passcode or biometric authentication",
-        "Enabling Find My iPhone for device protection",
-        "Regularly backing up your device",
-      ]
+        { label: "Access", desc: "Request a copy of your personal data." },
+        { label: "Correction", desc: "Update inaccurate information." },
+        { label: "Deletion", desc: "Request the removal of your data." },
+        { label: "Portability", desc: "Request a transfer of your data to another service." },
+      ],
+      note: "You can manage or delete your data within the App settings or contact us for assistance."
+    },
+    {
+      icon: Database,
+      title: "Data Retention",
+      description: "We retain your personal data only for as long as necessary to provide the App's services. If you delete the App or your account, your local data will be removed immediately. Cloud-synced data (if any) will be deleted within 30 days of your request."
     },
     {
       icon: Users,
       title: "Children's Privacy",
-      description: "Bubly is not intended for children under the age of 13 (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will promptly delete such data."
-    },
-    {
-      icon: Bell,
-      title: "Your Rights & Choices",
-      items: [
-        { label: "Access", desc: "View all your data within the app at any time" },
-        { label: "Correction", desc: "Edit or update your information directly in the app" },
-        { label: "Deletion", desc: "Delete any or all of your data from the app" },
-        { label: "Export", desc: "Export your data for personal use" },
-        { label: "Opt-out", desc: "Disable optional features like analytics or notifications" },
-      ]
+      description: "Bubly is not intended for children under 13 (or the local age of consent). We do not knowingly collect information from children."
     },
   ];
 
@@ -128,10 +103,10 @@ const Privacy = () => {
               Privacy <span className="gradient-text">Policy</span>
             </h1>
             <p className="text-base md:text-lg text-muted-foreground mb-4">
-              We believe privacy is a fundamental right. Here's how we protect yours.
+              Bubly values your privacy. Here's how we collect, use, store, and protect your information.
             </p>
             <p className="text-sm text-muted-foreground/70">
-              Effective Date: December 26, 2025 • Version 1.0
+              Last Updated: February 21, 2026
             </p>
           </ScrollReveal>
         </div>
@@ -149,10 +124,10 @@ const Privacy = () => {
                 <div>
                   <h3 className="text-lg font-bold text-foreground mb-2">🔒 Privacy at a Glance</h3>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>✓ Your data stays on your device — we don't collect it</li>
-                    <li>✓ No tracking, no ads, no data selling</li>
-                    <li>✓ AI processing is real-time only — nothing is stored</li>
-                    <li>✓ You have full control to access, edit, or delete your data</li>
+                    <li>✓ Your contact data stays on your device — we don't collect it</li>
+                    <li>✓ No selling or renting of your personal information</li>
+                    <li>✓ AI processing uses minimal data and is not used for model training</li>
+                    <li>✓ You have full control to access, correct, or delete your data</li>
                   </ul>
                 </div>
               </div>
@@ -184,22 +159,11 @@ const Privacy = () => {
                         {section.description}
                       </p>
                     )}
-
                     {section.content?.map((block, i) => (
-                      <div key={i} className="space-y-2">
+                      <div key={i} className="space-y-2" >
                         <h4 className="text-sm font-semibold text-foreground">{block.subtitle}</h4>
                         {block.description && (
                           <p className="text-sm text-foreground/70 leading-relaxed">{block.description}</p>
-                        )}
-                        {block.items && (
-                          <ul className="space-y-2">
-                            {block.items.map((item, j) => (
-                              <li key={j} className="flex items-start gap-3 text-sm text-foreground/70">
-                                <span className="w-1.5 h-1.5 rounded-full bg-bubly-violet mt-1.5 flex-shrink-0" />
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
                         )}
                       </div>
                     ))}
@@ -215,6 +179,12 @@ const Privacy = () => {
                           </li>
                         ))}
                       </ul>
+                    )}
+
+                    {section.note && (
+                      <p className="text-sm text-foreground/60 leading-relaxed italic border-l-2 border-bubly-violet/40 pl-3">
+                        {section.note}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -234,7 +204,7 @@ const Privacy = () => {
                   </div>
                 </div>
                 <p className="text-sm md:text-base text-foreground/80 leading-relaxed md:pl-16">
-                  We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. When we make material changes, we will notify you through the app or via email. We encourage you to review this policy periodically.
+                  We may update this Privacy Policy from time to time. Continued use of the App indicates acceptance of the updated policy.
                 </p>
               </div>
             </ScrollReveal>
@@ -249,7 +219,7 @@ const Privacy = () => {
                   <div>
                     <h3 className="text-lg font-bold text-foreground mb-2">Questions or Concerns?</h3>
                     <p className="text-sm text-foreground/70 mb-4">
-                      If you have any questions about this Privacy Policy or how we handle your data, please don't hesitate to reach out.
+                      If you have any questions about this Privacy Policy or your data, please contact us.
                     </p>
                     <Link
                       to="/contact"
