@@ -231,6 +231,27 @@ Proprietary Software - All Rights Reserved © 2025 Bubly Team
 
 ## 📝 Changelog
 
+### v1.4.0 (2026-02-22) 🎁 **Gift Finder & Content Refresh**
+
+#### ✨ New Features
+- **🎁 AI Gift Finder Demo** - Interactive 4-step gift recommendation flow on the homepage
+  - Personalized results per contact (Rose / Owen / Zack) × budget tier
+  - 12 contact-specific gift images (cozy / nice / sweet / wow)
+  - Animated step progress indicator matching the Greeting Generator style
+  - Loading animation with spinning gift emoji
+- **💌 Greeting Generator Component** - Extracted into standalone `GreetingGenerator.tsx`
+  - Progress step color logic unified with GiftFinder
+
+#### 🔧 Improvements
+- **Features Page** – Updated `mainFeatures` screenshots & descriptions for all five feature cards (Contact Management, Smart Reminders, Gift Finder, AI Greetings, Event Calendar); added four new app screenshots
+- **Privacy Policy** – Content updated to February 2026; expanded sections on data collection, AI processing transparency, and GDPR/CCPA/PDPA rights
+- **Terms of Service** – Content refreshed to February 2026 with clearer language
+
+#### 🧹 Cleanup
+- Removed unused generic gift placeholder images (`gift-cozy.png`, `gift-nice.png`, `gift-placeholder.png`, `gift-sweet.png`, `gift-wow.png`) in favour of contact-specific variants
+
+---
+
 ### v1.3.0 (2025-12-26) 🎉 **Production Release**
 
 #### ✨ New Features

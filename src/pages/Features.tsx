@@ -1,68 +1,67 @@
 import { Layout } from "@/components/Layout";
 import { SEO } from "@/components/SEO";
 import { Bubbo } from "@/components/Bubbo";
-import { FriendshipDeckDemo } from "@/components/FriendshipDeckDemo";
 import { ScrollReveal } from "@/hooks/use-scroll-reveal";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // App screenshots
-import screenshot1 from "@/assets/app-screenshot-1.png";
-import screenshot2 from "@/assets/app-screenshot-2.png";
-import screenshot3 from "@/assets/app-screenshot-3.png";
-import screenshot4 from "@/assets/app-screenshot-4.png";
-import screenshot5 from "@/assets/app-screenshot-5.png";
-import screenshot6 from "@/assets/app-screenshot-6.png";
+import screenshotAddFriends from "@/assets/app-screenshot-add-friends.png";
+import screenshotNotification from "@/assets/app-screenshot-notification.png";
+import screenshotGiftResult from "@/assets/app-screenshot-gift-result.png";
+import screenshotAIBlessing from "@/assets/app-screenshot-ai-blessings.png";
+import screenshotCalendar from "@/assets/app-screenshot-calendar.png";
 
 // Bubbo variants
-import bubboCool from "@/assets/bubbo-cool.png";
-import bubboArtist from "@/assets/bubbo-artist.png";
-import bubboProfessor from "@/assets/bubbo-professor.png";
+import bubboDoubleThumbup from "@/assets/bubbo-double-thumb-up.png";
+import bubboSentPaperPlane from "@/assets/bubbo-send-paperplane.png";
+import bubboNotification from "@/assets/bubbo-notification.png";
+import bubboWritingBirthdayCard from "@/assets/bubbo-writing-birthday-card.png";
+import bubboWrapGift from "@/assets/bubbo-wrap-gift.png";
 
 const mainFeatures = [
   {
     tag: "Contact Management",
-    title: "Know Your Bubbles Better",
-    description: "Keep track of hobbies, interests, and important milestones in one place. Add personal notes, gift ideas, and never forget what matters to your friends.",
-    screenshot: screenshot5,
-    bubbo: bubboCool,
+    title: "Add Friends with Ease",
+    description: "Building your circle has never been simpler. Add friends directly from your contacts, search by name, or share your profile link—stay connected with everyone who matters.",
+    screenshot: screenshotAddFriends,
+    bubbo: bubboDoubleThumbup,
     gradient: "from-bubly-sky/30 via-bubly-violet/20 to-bubly-pink/30",
+  },
+  {
+    tag: "Smart Reminders",
+    title: "Never Miss What Matters",
+    description: "Bubly keeps you in the loop with timely notifications for birthdays, anniversaries, and special events. Get the right nudge at the right time so you're always there for your friends.",
+    screenshot: screenshotNotification,
+    bubbo: bubboNotification,
+    gradient: "from-bubly-pink/30 via-bubly-violet/20 to-bubly-sky/30",
+  },
+  {
+    tag: "Gift Finder",
+    title: "The Perfect Gift, Found",
+    description: "Discover curated gift ideas tailored to your friend's personality and interests. From budget-friendly picks to luxurious surprises, Bubly helps you give something truly memorable.",
+    screenshot: screenshotGiftResult,
+    bubbo: bubboWrapGift,
+    gradient: "from-bubly-violet/30 via-bubly-pink/20 to-bubly-sky/30",
   },
   {
     tag: "AI Greetings",
     title: "Craft Perfect Wishes",
-    description: "Generate personalized greetings in any vibe—warm, fun, formal, or short. Every message is unique and tailored to your relationship.",
-    screenshot: screenshot4,
-    bubbo: bubboArtist,
+    description: "Generate personalized messages in any vibe—warm, fun, formal, or short.",
+    screenshot: screenshotAIBlessing,
+    bubbo: bubboWritingBirthdayCard,
     gradient: "from-bubly-pink/30 via-bubly-violet/20 to-bubly-sky/30",
   },
   {
-    tag: "Smart Calendar",
+    tag: "Event Calendar",
     title: "Never Miss a Moment",
-    description: "Track birthdays, anniversaries, and special events with an intelligent calendar. Get timely reminders so you're always prepared to celebrate.",
-    screenshot: screenshot6,
-    bubbo: bubboProfessor,
+    description: "Track birthdays, anniversaries, and special moments with an intelligent calendar.",
+    screenshot: screenshotCalendar,
+    bubbo: bubboSentPaperPlane,
     gradient: "from-bubly-violet/30 via-bubly-pink/20 to-bubly-sky/30",
   },
 ];
 
-const highlights = [
-  {
-    title: "Dashboard Overview",
-    description: "See all your connections at a glance with an elegant, intuitive interface.",
-    screenshot: screenshot3,
-  },
-  {
-    title: "Relationship Universe",
-    description: "Your personal galaxy of friends, organized beautifully.",
-    screenshot: screenshot1,
-  },
-  {
-    title: "Contact Profiles",
-    description: "Rich profiles with interests, notes, and important dates.",
-    screenshot: screenshot2,
-  },
-];
 
 const Features = () => {
   return (
@@ -96,10 +95,6 @@ const Features = () => {
         </div>
       </section>
 
-      {/* New Feature: Friendship Deck Showcase */}
-      <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-b from-transparent via-white/50 to-transparent">
-        <FriendshipDeckDemo />
-      </section>
 
       {/* Main Features - Premium Showcase */}
       <section className="py-12 md:py-16 overflow-hidden">
@@ -163,92 +158,6 @@ const Features = () => {
                   </div>
                 </ScrollReveal>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* App Highlights - Horizontal Scroll on Mobile */}
-      <section className="py-16 md:py-24 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-bubly-violet/3 to-transparent pointer-events-none" />
-
-        <div className="container mx-auto px-4 relative">
-          <ScrollReveal className="text-center mb-8 md:mb-16">
-            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 rounded-full glass text-[10px] md:text-xs font-medium text-muted-foreground mb-3 md:mb-4 tracking-wide uppercase">
-              App Highlights
-            </span>
-            <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
-              Designed with <span className="gradient-text">Care</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-lg">
-              Every screen crafted for a delightful experience
-            </p>
-          </ScrollReveal>
-
-          {/* Mobile: Horizontal Scroll */}
-          <div className="md:hidden">
-            <div className="flex gap-4 overflow-x-auto pb-4 px-2 scrollbar-hide snap-x snap-mandatory -mx-4">
-              {highlights.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="flex-shrink-0 w-[75vw] max-w-[280px] snap-center first:ml-4 last:mr-4"
-                >
-                  <div className="relative">
-                    <div className="relative mb-4">
-                      <div className="absolute -inset-2 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/15 to-bubly-pink/20 rounded-[1.5rem] blur-xl opacity-40" />
-                      <div className="relative rounded-[1.25rem] overflow-hidden shadow-[0_15px_40px_-12px_rgba(0,0,0,0.2)] border border-white/10">
-                        <img
-                          src={item.screenshot}
-                          alt={item.title}
-                          className="w-full h-auto"
-                        />
-                      </div>
-                    </div>
-                    <div className="text-center px-2">
-                      <h3 className="text-base font-bold mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-xs leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-xs text-muted-foreground/50 mt-2">← Swipe to explore →</p>
-          </div>
-
-          {/* Desktop: Grid */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8 lg:gap-12">
-            {highlights.map((item, index) => (
-              <ScrollReveal
-                key={item.title}
-                delay={index * 150}
-                direction="up"
-                className="group"
-              >
-                <div className="relative">
-                  <div className="relative mb-6">
-                    <div className="absolute -inset-3 bg-gradient-to-br from-bubly-sky/20 via-bubly-violet/15 to-bubly-pink/20 rounded-[2rem] blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-700" />
-                    <div className="relative rounded-[1.5rem] overflow-hidden shadow-[0_20px_50px_-15px_rgba(0,0,0,0.2)] border border-white/10 transition-transform duration-700 group-hover:-translate-y-2">
-                      <img
-                        src={item.screenshot}
-                        alt={item.title}
-                        className="w-full h-auto"
-                      />
-                    </div>
-                  </div>
-                  <div className="text-center px-2">
-                    <h3 className="text-xl font-bold mb-2 group-hover:gradient-text transition-all duration-500">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
             ))}
           </div>
         </div>
